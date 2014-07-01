@@ -1,0 +1,38 @@
+\section{Basic Techniques}
+
+In REME-D: a Reflective epidemic Message-Oriented Debugger for Ambient Oriented Applications paper the author breaks down debuggers in two main families (Section 2 - Related Work): log-based debuggers (also known as post-mortem debuggers) and breakpoint-based debuggers (also known as online debuggers).
+
+	Log-based debuggers insert log statements in the code of the program to be able to generate a trace log during its execution.
+	
+	Breakpoint-based debuggers, on the other hand, execute the program in the debug mode that allows programs to pause/resume the program execution at certain points, inspect program state, and perform step-by-step execution.
+	
+\subsection{Log-based Debuggers}
+
+	Log-based debuggers insert log statements in the code of the program to able to generate a trace log during its execution. It is the most primitive debugging technique, but it is also the easiest to implement. Indeed, it is often the only technique available, as pointed out by Philip Zeyligger of Cloudera during a Tech Talk in 2013 about Tricks for Distributed Debugging and Diagnosis. In this technique, you insert debugging probes, usually output statements, at carefully selected places in the program. Using output data, you try to understand the execution behavior so you can find bugs. The advantage of this technique are that only simple output statements are required and that you see only the data you select.
+	
+	However, it has disadvantages. First, you must observe the output of processes on multiple processors at the same time. When the number of processes is large, such observation becomes infeasible. Also, the technique relies completely on your ability to select appropriate places in the program to insert output statements - an inexact art greatly dependent on your experience and thinking. Furthermore, the technique requires modifications to the program and thus may alter the program structure or even introduce new bugs.
+	
+	Despite its disadvantages, combining output debugging with other techniques can make debugging easier.
+	
+\subsection{Breakpoint-based Debuggers}
+
+	
+	Breakpoint-based debuggers, on the other hand, execute the program in the debug mode that allows programs to pause/resume the program execution at certain points, inspect program state, and perform step-by-step execution. Stack traces, for example, give the developer an idea of what has happened before in the execution of the program, giving hints of how the developer got the current point in the execution. Despite the fact that the stack view does not show total causality, in most cases tracing back the stack is enough to find the cause of the bug. When this does not uncover the cause, breakpoints make it easier to mark to interesting places in the execution.
+	
+	A breakpoint is a point in the execution flow where normal execution is suspended and cluster-state information is saved. At a breakpoint, you can interactively examine and modify parts of cluster states, like execution status and data values, or control later execution by requesting single-step execution or setting further breakpoints. If you request it, execution will continue after the breakpoint.
+	
+	The technique requires no extra code in the program, so it avoids some of the unwanted effects of adding debugging probes to distributed programs. Also, you can control cluster execution and select display information interactively. The main disadvantage is that you must be knowledgeable enough to set breakpoints at appropriate places in the program and to examine relevant data. Using breakpoints in a distributed environment raises three problems.
+	
+	First, it is impossible to define a breakpoint in terms of precise global states. Thus, researchers usually define a breakpoint in terms of events in a process or interactions among processes.
+	
+	Second, the semantics of single-step execution are no longer obvious. Some people define it to be the execution of a single machine instruction or a statement of source code on a local processor. Others consider it to be a single statement on each processor involved. Still others treat an event as a single-step. Executing a single instruction may not be very productive. To find bugs that result from the interaction of processes, it is more effective to run the cluster until a significant event occurs.
+	
+	Third, there is the problem of halting the process cluster at a breakpoint or after a single step. When a breakpoint is triggered, the whole cluster must be stopped. One simple way to do so is to broadcast pause messages to all processors. A processor completely suspends its execution when it receives the pause message. But in may cases, you want only to stop the process cluster you are interested in, not the entire system. In such cases, you would send out pause messages with a cluster identification. When a processor receives such a message, it suspends only the execution of that cluster's processes. To resume the execution, a continue message is broadcast to all processors.
+	
+	However, the pause and continue operations are not so simple as they might seem at first. For example, when a process that is subject to a time-out request halts for debugging, the real-time clock is still running. When the process resumes execution, it will encounter a much shorter time-out interval, and its behavior may change significantly. Cooper introduced a logical clock mechanism to maintain correct time-out intervals and this to provide transparent halting [1].
+	
+	Pause and continue operations also involve the problem of how to halt the cluster in a consistent global state. Chandy and Lamport introduced a distributed algorithm to obtain distributed snapshots of a cluster[2]. The algorithm is intended to capture only global states with stable properties that, once they become true, remain true thereafter (like deadlock and process death).
+	
+	The algorithm is divided into two independent phases. During the first phase, local state information is recorded at each process. This phase ends when it is determined that all information - both within processes and in transit over communication channels - has been taken into account. In the second phase, the local state information of each process is collected into a snapshot by the processes that initiated the snapshot.
+	
+	There are two important issues in the use of this algorithm. First, halting a process depends on the interactions between that process and other processes. The algorithm cannot collect local information about a process that has one or no communication channels connected to other processes. Furthermore, consider a process that has only infrequent interactions with other processes: That process would halt long after all other processes have halted. Miller and Choi dealt with this issue by introducing two additional control channels between a debugger process and each process in the cluster [3]. The second issue is that messages must be received in the order in which they are sent. Thus, the algorithm cannot be based directly on a datagram-type communication facility.	
