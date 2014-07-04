@@ -5,11 +5,9 @@
 \usepackage{graphicx,url}
 \usepackage{listings}
 
+\usepackage[brazil]{babel}   
+\usepackage[latin1]{inputenc}  
 \RequirePackage[vlined,titlenumbered,algo2e,ruled,portuguese]{algorithm2e} 
-
-\usepackage[brazilian]{babel}
-\usepackage[utf8]{inputenc}
-\usepackage[T1]{fontenc}
      
 \sloppy
 

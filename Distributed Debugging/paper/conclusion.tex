@@ -1,1 +1,14 @@
 \section{Conclusion}
+\label{sec:conclusion}
+
+A plataforma DistGeo apresenta uma solução completa para o processamento distribuído de operações
+espaciais utilizando o índice R-Tree distribuído. Este processamento distribuído gera um desafio: como depurar o algoritmo de inserção em uma R-Tree com os nós distribuídos em um cluster de computadores. 
+
+Nenhuma técnica de depuração dos algoritmos espaciais da R-Tree foi encontrado na literatura. Por isso, neste trabalho foi proposta uma nova técnica de depuração da construção do índice R-Tree distribuído denominado RDebug. Esta técnica utiliza o próprio índice R-Tree para coletar as informações de depuração. Esta coleta é realizada no índice R-Tree realizando o caminhamento na árvore de forma down-top. Utilizando a própria estrutura distribuída do índice, os dados podem ser coletados de forma distribuída, aumentando a eficiência no processamento do algoritmo de depuração.
+
+Esta nova técnica foi implementada na plataforma DistGeo que possui arquitetura peer-to-peer. Os nós da R-Tree estão distribuídos e replicados pelo cluster de computadores. Por isso, o algoritmo RDebug pode ser processado sem que haja pontos de gargalo e pontos de falhas no cluster. Além disso, a replicação dos nós da R-Tree no cluster permitem que seja realizado um balanceamento de carga no caminhamento do índice distribuído R-Tree. Neste caminhamento, em cada acesso a um nó da R-Tree pode-se escolher a máquina com menor carga de processamento naquele momento, aumentando a eficiência do algoritmo RDebug. Estas informações do estado da máquina são trocadas utilizando o algoritmo Gossip.
+
+Uma aplicação gráfica foi implementada para visualizar a estrutura do índice distribuído R-Tree e as informações de depuração da construção do índice. Com estas informações é possível identificar inconsistência na construção do índice e otimizar a qualidade do índice distribuído.
+
+Em trabalhos futuros, o algoritmo RDebug será modificado para depurar de forma distribuída os algoritmos de busca Window Query e Join Query. O algoritmo RDebug pode ser adaptado facilmente para coletar informações de depuração da Window Query. Para o algoritmo Join Query ele deve sofrer diversas mudanças, já que o caminhamento é realizado em duas R-Trees distribuídas diferentes.
+Serão realizados testes de desempenho para analisar a escalabilidade do algoritmo RDebug na plataforma DistGeo. 

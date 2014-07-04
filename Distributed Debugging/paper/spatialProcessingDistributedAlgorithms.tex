@@ -1,4 +1,5 @@
 \section{Distributed Processing of Spatial Algorithms}
+\label{sec:spatial_dist}
 
 \subsection{Data Structures for Spatial Data Processing}
 
@@ -6,13 +7,12 @@
 	
 	An index based on objects' spatial locations is desirable, but classical one-dimensional database indexing structures are not appropriate to multi-dimensional spatial searching structures based on exact matching of values, such as hash tables, are not useful because a range search is required Structures using one-dimensional ordering of key values, such as B-trees and ISAM indexes, do not work because the search space is multl-dimensional. 
 		
-	A number of structures have been proposed for handling multi-dimensional point data, such as: KD-Tree [Bentley 1975], Hilbert R-Tree [Kamel and Faloutsos 1994] and R-Tree [Guttman 1984].
+	A number of structures have been proposed for handling multi-dimensional point data, such as: KD-Tree \cite{bentley1975multidimensional}, Hilbert R-Tree \cite{kamel1994hilbert} and R-Tree \cite{guttman1984r}.
 	
-	R-Trees were proposed by Antonin Guttman in 1984 and have found significant use in both theoretical and applied contexts, they are tree data structures used for spatial access methods, i.e, for multi-dimensional information such as geographical coordinates, rectangles, polygons. Similar to the B-Tree [Comer 1979], the R-Tree is also a balanced search tree (so all leaf nodes are at the same height).
+	R-Trees were proposed by Antonin Guttman in 1984 and have found significant use in both theoretical and applied contexts, they are tree data structures used for spatial access methods, i.e, for multi-dimensional information such as geographical coordinates, rectangles, polygons. Similar to the B-Tree \cite{comer1979ubiquitous}, the R-Tree is also a balanced search tree (so all leaf nodes are at the same height).
 
-	The key idea of the data structure is to group nearby objects and represent them with their minimum bounding rectangle (MBR) in the next higher level of the tree; the "R" in R-tree is for rectangle. Since all objects lie within this bounding rectangle, a query that does not intersect the bounding rectangle also cannot intersect any of the contained objects. At the leaf level, each rectangle describes a single object; at higher levels the aggregation of an increasing number of objects. This can also be seen as an increasingly coarse approximation of the data set.
-	
-	R*-Trees are a variant of R-Trees used for indexing spatial information. R*-trees have slightly higher construction cost than standard R-trees, as the data may need to be reinserted; but the resulting tree will usually have a better query performance. Like the standard R-tree, it can store both point and spatial data. It was proposed by Norbert Beckmann, Hans-Peter Kriegel, Ralf Schneider, and Bernhard Seeger in 1990. R*-Trees are the data structure described in this paper.
+	The key idea of the data structure is to group nearby objects and represent them with their minimum bounding rectangle (MBR) in the next higher level of the tree. Since all objects lie within this bounding rectangle, a query that does not intersect the bounding rectangle also cannot intersect any of the contained objects. At the leaf level, each rectangle describes a single object; at higher levels the aggregation of an increasing number of objects. This can also be seen as an increasingly coarse approximation of the data set.
+
 Figure 1 illustrates the hierarchical structure of an R-Tree with a root node, internal nodes (N1...2 C N3...6) and leaves (N3...6 C a...i). The Upper Top of Figure 1 shows MBRs grouping spatial objects of a..a i in sets by their co-location. The bottom of Figure 1 illustrates the R-Tree representation. Each node stores at most M and at least m <=M/2 entries [Guttman 1984].
 
 \begin{figure}[ht]
@@ -25,19 +25,19 @@ Figure 1 illustrates the hierarchical structure of an R-Tree with a root node, i
 The input is a search rectangle (Query box). Searching is quite similar to searching in a B+ tree. The search starts from the root node of the tree. Every internal node contains a set of rectangles and pointers to the corresponding child node and every leaf node contains the rectangles of spatial objects (the pointer to some spatial object can be there). For every rectangle in a node, it has to be decided if it overlaps the search rectangle or not. If yes, the corresponding child node has to be searched also. Searching is done in a recursively until all overlapping nodes have been traversed. When a leaf node is reached, the contained bounding boxes (rectangles) are tested against the search rectangle and their objects (if there are any) are put into the result set if they lie within the search rectangle.
 	
 	Dead space is a space which is indexed but does not contain data. In Figure 1, N1 area is an example of dead space. Dead spaces cause the search go into false sub-trees. In figure 1, window K represents the intersection between the MBR dead space and N2, the search walks through the sub-tree of N2, although this sub-tree does not contain any data to return.
-Overlapping areas are regions of intersection between polygons. The area between N3 and N4 in Figure 1 is an example of overlapping. Less overlapping reduces the amount of sub-trees accessed during r-tree traversal. The overlapping area between N3 and N4 in Figure 1, forces the traversal of the two sub-trees, degrading the performance of R-Tree [Guttman 1984, Beckmann et al. 1990].
+Overlapping areas are regions of intersection between polygons. The area between N3 and N4 in Figure 1 is an example of overlapping. Less overlapping reduces the amount of sub-trees accessed during r-tree traversal. The overlapping area between N3 and N4 in Figure 1, forces the traversal of the two sub-trees, degrading the performance of R-Tree \cite{beckmann1990r}.
 
 \subsection{DistGeo: A Platform of Distributed Spatial Operations for Geoprocessing}
 
 There are two important requirements for processing data in shared-nothing (cluster) [DeWitt and Gray 1992] architectures, First divide the data in partitions. The second requirement is distribute this partitions in the cluster nodes. For spatial datasets, we use the same idea of partitions, and the partitions distribution considers the geographic co-location among the polygons to speed up the searching algorithm.
 
-Figure 2 illustrates the structure of a Distributed R-Tree in a cluster. The partitioning it is performed grouping the nodes in cluster and creating the indexes according to the R-Tree structure. The lines in figure 2 show the need for message exchange to reach the sub-trees during the algorithm processing.
+Figure \ref{fig:partitioning} illustrates the structure of a Distributed R-Tree in a cluster. The partitioning it is performed grouping the nodes in cluster and creating the indexes according to the R-Tree structure. The lines in Figure \ref{fig:partitioning} show the need for message exchange to reach the sub-trees during the algorithm processing.
 
 \begin{figure}[ht]
 \centering
 \includegraphics[width=.5\textwidth]{r-tree-partiotioning.png}
 \caption{R-Tree Partitioning in a shared-nothing architecture}
-\label{fig: R-Tree Partitioning in a shared-nothing architecture}
+\label{fig:partitioning}
 \end{figure}
 
 Insertions and searching in a distributed R-Tree are similar to the non-distributed version, except for:

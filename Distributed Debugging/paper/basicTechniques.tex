@@ -1,20 +1,25 @@
 \section{Basic Techniques}
+\label{sec:debug_tec}
+
+De forma geral, nenhum trabalho foi realizado na proposta de técnicas de depuração do índice R-Tree distribuído, de acordo com nosso conhecimento e observando as revisões de literatura feitas em \cite{manolopoulos2003rth,jacox2007spatial}.
+Nosso trabalho propõe um novo algoritmo de depuração do índice R-Tree distribuído e uma plataforma com arquitetura peer-to-peer para processar os algoritmos espaciais distribuídos.
+
+Os trabalhos encontrados na literatura ou propõem técnicas de depuração distribuídas em aplicações genéricas ou propõem técnicas de processamento distribuído da R-Tree. Em \ref{dist_debug} são apresentados os trabalhos que propõem técnicas de depuração distribuída e em \ref{spatial_dist} são apresentados as propostas de plataformas para processamento distribuído de algoritmos espaciais.
+	
+\subsection{Distributed Debugging Techniques}
+\label{dist_debug}
 
 In REME-D: a Reflective epidemic Message-Oriented Debugger for Ambient Oriented Applications paper the author breaks down debuggers in two main families (Section 2 - Related Work): log-based debuggers (also known as post-mortem debuggers) and breakpoint-based debuggers (also known as online debuggers).
 
 	Log-based debuggers insert log statements in the code of the program to be able to generate a trace log during its execution.
 	
 	Breakpoint-based debuggers, on the other hand, execute the program in the debug mode that allows programs to pause/resume the program execution at certain points, inspect program state, and perform step-by-step execution.
-	
-\subsection{Log-based Debuggers}
 
 	Log-based debuggers insert log statements in the code of the program to able to generate a trace log during its execution. It is the most primitive debugging technique, but it is also the easiest to implement. Indeed, it is often the only technique available, as pointed out by Philip Zeyligger of Cloudera during a Tech Talk in 2013 about Tricks for Distributed Debugging and Diagnosis. In this technique, you insert debugging probes, usually output statements, at carefully selected places in the program. Using output data, you try to understand the execution behavior so you can find bugs. The advantage of this technique are that only simple output statements are required and that you see only the data you select.
 	
 	However, it has disadvantages. First, you must observe the output of processes on multiple processors at the same time. When the number of processes is large, such observation becomes infeasible. Also, the technique relies completely on your ability to select appropriate places in the program to insert output statements - an inexact art greatly dependent on your experience and thinking. Furthermore, the technique requires modifications to the program and thus may alter the program structure or even introduce new bugs.
 	
 	Despite its disadvantages, combining output debugging with other techniques can make debugging easier.
-	
-\subsection{Breakpoint-based Debuggers}
 
 	
 	Breakpoint-based debuggers, on the other hand, execute the program in the debug mode that allows programs to pause/resume the program execution at certain points, inspect program state, and perform step-by-step execution. Stack traces, for example, give the developer an idea of what has happened before in the execution of the program, giving hints of how the developer got the current point in the execution. Despite the fact that the stack view does not show total causality, in most cases tracing back the stack is enough to find the cause of the bug. When this does not uncover the cause, breakpoints make it easier to mark to interesting places in the execution.
@@ -36,3 +41,31 @@ In REME-D: a Reflective epidemic Message-Oriented Debugger for Ambient Oriented 
 	The algorithm is divided into two independent phases. During the first phase, local state information is recorded at each process. This phase ends when it is determined that all information - both within processes and in transit over communication channels - has been taken into account. In the second phase, the local state information of each process is collected into a snapshot by the processes that initiated the snapshot.
 	
 	There are two important issues in the use of this algorithm. First, halting a process depends on the interactions between that process and other processes. The algorithm cannot collect local information about a process that has one or no communication channels connected to other processes. Furthermore, consider a process that has only infrequent interactions with other processes: That process would halt long after all other processes have halted. Miller and Choi dealt with this issue by introducing two additional control channels between a debugger process and each process in the cluster [3]. The second issue is that messages must be received in the order in which they are sent. Thus, the algorithm cannot be based directly on a datagram-type communication facility.	
+	
+\subsection{Distributed Spatial Algorithms}
+\ref{spatial_dist}
+
+Esta Seção apresenta os trabalhos que propõe algoritmo para processar os algoritmos espaciais de forma distribuída.
+A primeira publicação encontrada a respeito do tema foi a M-RTree \cite{koudas1996declustering}, que apresenta um servidor master e vários servidores escravos para processar as requisições. Isto gera uma grande concentração
+de processamento no servidor mestre, que além de processar alguns níveis diretórios da R-Tree, agrega as respostas para
+as aplicações clientes. Estes comportamentos também são evidenciados na MC-RTree \cite{schnitzer1999master}.
+
+Em \cite{an1999storing}, os autores exploram a distribuição de uma árvore R-Tree em
+um cluster. O artigo propõe uma arquitetura similar à M-RTree e MC-RTree e, por isso,
+possui os mesmos problemas descritos anteriormente.
+
+Na SD-RTree proposta em \cite{du2007sd} uma árvore binária é utilizada ao invés de uma R-Tree.
+A árvore binária causa um grande aumento no número de mensagens, já que para o mesmo conjunto de dados a árvore binária possui um número bem maior de níveis que a R-Tree. A proposta Hadoop-GIS \cite{Kerr 2009} apresenta uma alternativa para processamento paralelo de dados espaciais, mas não emprega índices para melhorar o desempenho das operações nos datasets.
+
+Em \cite{dedsi} é proposta uma plataforma de processamento distribuído de operações espaciais. A arquitetura proposta não é escalável, já que todas as mensagens devem passar por um servidor master replicado. Em [saviosbrc] é proposta uma plataforma com arquitetura peer-to-peer híbrida para processar a junção espacial distribuída. A arquitetura proposta em [saviosbrc] possui um conjunto de servidores centrais para resolução de nomes e gerenciamento de eventos. Estes servidores podem se tornar um gargalo no sistema.
+
+Um framework é proposto em \cite{xie2008two} para realizar o processamento de consultas
+espaciais com um esquema de balanceamento de carga em duas fases.
+Em \cite{zhang2009spatial} é proposta uma arquitetura que utiliza o modelo MapReduce para
+processar as operações espaciais. A arquitetura é indicada, segundo o próprio
+trabalho, em casos onde as bases de dados não estão indexadas.
+Uma arquitetura utilizando o modelo MapReduce é
+apresentada em \cite{zhong2012towards}. A plataforma possui um índice espacial distribuído em dois níveis: índice global
+e índice local.
+
+Diferentemente da plataforma DistGeo proposta neste trabalho, nenhum trabalho encontrado na literatura implementou uma plataforma com arquitetura peer-to-peer para processamento de algoritmos espaciais distribuídos. Além disso, nenhum destes trabalhos propõem técnicas para depuração do índice espacial R-Tree de forma distribuída.

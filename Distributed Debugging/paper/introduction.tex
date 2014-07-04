@@ -1,11 +1,25 @@
 \section{Introduction}
+\label{sec:intro}
 
-Debugging is an essential step in the development process, albeit often neglected in the development of distributed applications due to the fact that distributed systems complicate the already difficult task of debugging.
+A popularização da Internet trouxe grandes mudanças nos sistemas armazenam, recuperam e analisam dados referentes ao mundo
+geográfico. Devido a crescente disponibilidade de dados e aumento no número de
+usuários, houve a necessidade de distribuir os dados destas aplicações entre vários computadores. 
+Com isto emergiram as aplicações espaciais distribuídas, que podem ser definidos como um conjunto de computadores interconectados por uma rede de computadores que cooperam para a realização de geoprocessamento nas bases de dados disponíveis no sistema.
 
-Few techniques have been developed for debugging distributed spatial data; furthermore, no precise or elegant method has been developed for debugging distributed spatial data based on R-Trees data structures.
+Estas aplicações utilizam o índice espacial R-Tree para indexar os dados armazenados. Geralmente, as aplicações controem e processam o índice R-Tree de forma centralizada. Entretanto, para grandes quantidade de dados e usuários torna-se impossível processar os algoritmos da R-Tree de forma eficiente em apenas uma máquina. Por isso, diversos trabalhos \cite{an1999storing,du2007sd,schnitzer1999master,wei2008new,koudas1996declustering,dedsi,zhang2009spatial,zhong2012towards} distribuem os nós do índice R-Tree entre várias máquinas de um cluster para que os algoritmos sejam processados de forma distribuída.
 
-R-Trees are the most used data structures for spatial data access in a distributed environment, however searching algorithms and debugging is a non-trivial task as the R-Tree nodes are usually distributed in multiple nodes for efficient computation.
+A distribuição dos nós da R-Tree no cluster ocasionou o surgimento de um desafio: como realizar a depuração dos algoritmos espaciais em um cluster de computadores. Debugging is an essential step in the development process, albeit often neglected in the development of distributed applications due to the fact that distributed systems complicate the already difficult task of debugging.
 
-In recent years, researchers have been developed some helpful debugging techniques for distributed environment. Nevertheless, we have not found any technique to debug a distributed R-Tree.
+In recent years, researchers have been developed some helpful debugging techniques for distributed environment. Nevertheless, we have not found any technique to debug a distributed R-Tree. Por isso, este trabalho tem como objetivo propor uma técnica para depuração do algoritmo de inserção de dados da R-Tree, além de depurar a qualidade do índice distribuído construído no cluster. 
 
-The rest of the paper is structured as follows. In Section 2,  we briefly give an overview of the use of debugging techniques for distributed environments, Section 3 describes the distributed processing of spatial algorithms, Section 4 describes our approach for R-Tree debugging. Finally, we close the paper with some concluding remarks in Section 5.
+O método de depuração proposto, denominado RDebug, utiliza a própria estrutura distribuída do índice para agregar as informações de depuração. Para testar este algoritmo, a plataforma shared-nothing de processamento de algoritmos espaciais distribuídos, DistGeo, foi construída para implementar os algoritmos distribuídos da R-Tree e o algoritmo de depuração RDebug. Uma aplicação gráfica foi construída para visualizar as informações de depuração e a estrutura do índice R-Tree. 
+
+As principais contribuições deste trabalho são:
+
+\begin{itemize}
+  \item Proposta de um algoritmo para depuração do algoritmo de inserção de dados na R-Tree distribuída.
+	\item A implementação de uma plataforma shared-nothing, sem pontos de falhas, para o processamento dos algoritmos espaciais distribuídos da R-Tree.
+	\item Implementação de uma aplicação gráfica para visualização das informações de depuração e do índice R-Tree distribuído.
+\end{itemize}
+
+The rest of the paper is structured as follows. In Section \ref{sec:debug_tec}, we briefly give an overview of the use of debugging techniques for distributed environments. Section \ref{sec:spatial_dist} describes the distributed processing of spatial algorithms, Section \ref{sec:rdebug} describes our approach for R-Tree debugging. Finally, we close the paper with some concluding remarks in Section 5\ref{sec:conclusion}.
