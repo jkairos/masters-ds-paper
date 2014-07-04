@@ -3,64 +3,107 @@
 
 	Spatial index debugging is a big challenge in a distributed R-Tree and this sections describes a new technique, known as RDebug, which allows debugging the index creation of an R-Tree.
 	
-	The R-tree index building follows a top-down approach, in other words, the index is always built from root to leaves. Debugging the index reliability as the index is built is a non-trivial task, and the aim of this paper is to show a technique for index debugging after it has been created. Common challenges when working with an R-Tree are: i) Reliability of the nodes replicas of the R-Tree, ii) ensure that the MBR of the parent nodes intersect the MBR of their children, iii) the existence of duplicated nodes or being referenced by more than one parent node, and iv) if the value M and m of the nodes are compliant with the R-Tree descriptions as shown in Section 3,1. Furthermore, it is possible to access index data to help in its optimization as dead space and overlapping area.
+	The R-tree index building follows a top-down approach, in other words, the index is always built from root to leaves. Debugging the index reliability as the index is built is a non-trivial task, and the aim of this paper is to show a technique for index debugging after it has been created. Common challenges when working with an R-Tree are: i) Reliability of the nodes replicas of the R-Tree, ii) ensure that the MBR of the parent nodes intersect the MBR of their children, iii) the existence of duplicated nodes or being referenced by more than one parent node, and iv) if the value M and m of the nodes are compliant with the R-Tree descriptions as shown in Section \ref{sec:spatial_dist}. Furthermore, it is possible to access index data to help in its optimization as dead space and overlapping area.
 
-	Table 1 shows the RDebug technique for debugging the distributed spatial index, using the index structure itself. The algorithm has two phases:
+	Algorithm \ref{alg:rdebug} shows the RDebug technique for debugging the distributed spatial index, using the index structure itself. The algorithm has two steps:
+1) The algorithm processing is similar to the search in an R-Tree; 2) The algorithm does int inverse of a search in an R-Tree appending information to the distributed index.
 
-1) The algorithm processing is similar to the search in an R-Tree;
+Na primeira etapa, denominada S1 [Search subtrees] (linhas 1 a 11), o Algoritmo \ref{alg:rdebug} percorre todos os nós da R-Tree a partir do nó raiz até chegar nas folhas. Esta primeira etapa têm como objetivo espalhar o algoritmo de debugging. A requisição inicial é enviada para algum servidor que armazena uma réplica do nó raiz.  
 
-2) The algorithm does int inverse of a search in an R-Tree appending information to the distributed index.
-\begin{lstlisting}[frame=single,caption={RDebug Algorithm}]
-Given an R-tree whose node is namely T, the algorithm 
-starts on root node
+Se o nó $T$ analisado não for folha (linhas 2 a 8), então é armazenado o número de entradas filhas para que seja utilizado para controlar o número de respostas esperadas para este nó na segunda etapa do algoritmo. Este valor é armazenado em uma memória compartilhada por todas os servidores que tem alguma réplica de $T$. Nas linhas 4 a 7, para cada entrada $E$ no nó, uma mensagem é enviada (continuando a etapa S1) para algum servidor que contém uma réplica do nó filho de $E$, continuando assim a primeira etapa nos nós filhos. Se for folha, a segunda etapa, denominada S2 [Aggregation] , é iniciada. 
 
-S1 [Search subtrees]
-If T is not leaf:
-	store the number of entries child
-	verifiy the consistency of T in others replicas
-	verify the consistency of M and m values
+O objetivo da segunda etapa (linhas 12 a 41) é agregar os valores utilizados para depuração posteriormente. Esta segunda etapa recebe as informações de depuração de cada nó filho de $T$. Portanto, para um determinado nó $T$ com $n$ filhos, a segunda etapa é chamada $n$ vezes no nó $T$.
+
+Utilizando o próprio índice para agregar estes valores, pode-se utilizar os recursos computacionais disponíveis no cluster para minimizar o tempo de agregação das informações de depuração. A utilização da estrutura reversa do índice permite, além de distribuir o processamento da agregação de informações, facilitar a construção do código de agregação de informações de depuração, já que um nó da R-Tree é responsável por agregar as informações apenas de seus filhos. 
+
+Na linha 13 é verificado a consistência de $T$ nos servidores que armazenam alguma réplica de $T$. Na linha 14, são verificado a consistência dos valores de $M$ e $m$. Nas linhas 16 e 17 são calculados a área morta e área de sobreposição em cada nó da R-tree. Estes valores irão permitir que o projetista do algoritmo de inserção da R-Tree possa analisar a qualidade do índice construído. Além destes valores, nas linhas 18 a 22, são obtidos os MBRs dos nós e de cada entrada do nó. Estes valores podem ser utilizados por uma ferramenta para visualizar a estrutura do índice R-Tree.
+
+	Se a etapa de agregação estiver sendo executada nas folhas, então se $T$ for raiz (linhas 24 a 26), as informações do nó são enviadas para a aplicação cliente. Se $T$ não for raiz então, na linha 27, as informações são enviadas para o nó pai de $T$. Se a etapa de agregação estiver em um nó interno (linhas 29 a 43), o algoritmo deve agregar as informações dos nós filhos. Na linha 29, o algoritmo recebe as informações enviadas pelo nó filho. Na linha 30, é verificado se o MBR da entrada que aponta para o nó filho é igual ao MBR enviado pelo nó filho. 
 	
-	for each entry E in T
-		server <- choose one server, randomically,  that store one replica 
-				of E
-		send msg to server to process the node T 
-		child on step S1
+	As informações dos nós filhos são armazenadas em uma memória compartilhada, com controle de concorrência, pelas réplicas de $T$. Por isso, na linha 31, estas informações são obtidas da memória compartilhada. Na linha 32, são adicionados os dados coletados nas linhas 29 e 30 na lista de informações. Na linha 33, é obtido na mémoria compartilhada das réplicas de $T$ o número de nós filhos que enviaram informações de depuração. Este valor é armazenado na variável $count$ e este valor $count$ é decrementado para que as outras réplicas tome ciência. 
+	
+	Se todos os nós filhos estiverem enviados a resposta, então a variável count irá valer 0 e as linhas 35 a 39 serão processadas. Se $T$ for raiz, então serão enviadas as informações para a aplicação cliente, caso contrário, estas informações serão enviadas para o nó pai de $T$. Se a variável $count$ for maior que 0, então as informações dos clientes são armazenadas na memória compartilhada.
 
-If T is leaf
-	verifiy the consistency of T in others replicas
-	Invoke step S2 [Aggregation]
+\medskip
+\begin{center}
+\begin{minipage}{1\textwidth}
+\begin{algorithm2e}[H]
+\SetAlFnt{\small\sf}
+ \DontPrintSemicolon
+ \LinesNumbered
+\SetAlgoLined
+ \BlankLine
+ \Entrada{$T$ reference to root node of R-Tree $tree$}
+ \Saida{Debugging information about distributed R-Tree $tree$}
+ \BlankLine
+	
+ S1 [Search subtrees]
+
+\eIf{$T$ is not leaf}{
+  store the number of child entries in each replica server of T\;
+	
+	\For{each entry $E$ in $T$} {
+		$server \leftarrow $ choose one server, randomically,  that store one replica of $E$\;
+		send msg to $server$ to process the node child of $E$ on step S1\;
+	}
+}
+{
+  verifiy the consistency of $T$ in others replicas\;
+	Invoke step S2 [Aggregation]\;
+}
 
 S2 [Aggregation]
-overlap <- calculate overlap area of T
-dead_area <- calculate dead area of T
-bound <- get the MBR of T
-list = {}     //contains the MBRs of entries of T
 
-for each entry E in T
-	add the MBR of E in the list
-	
-If T is not leaf:
-    entries_info <- informations of the entries sent by 
-    				child node
-    bound_child <- bound of the child node
-    verify if the bound of the child node is equal to bound 
-    of entry of T that points to this child
-    count <- retrieve the number of entries child and 
-    decrement by 1 unit
-    if(count == 0)
-        if T has no parent
-            send response with R-Tree nodes information to 
-            app client
-        else
-            send msg with child informations to parent node
-else
-     if T has no parent
-            send response with R-Tree nodes information to 
-            app client
-     else
-            send msg with child informations to parent node
-\end{lstlisting}
-	
-	The First Step called of S1 [Search sub-trees], the algorithm traversals every R-Tree node starting from the root node to the leaves. This step objective, beside sparse the debugging algorithm, it is identify consistency issues in the R-Tree nodes and the M and m value consistency.
+$replica\_consistency \Leftarrow$ verifiy the consistency of $T$ in others replicas\;
+$node\_consistency \Leftarrow$	verify the consistency of $M$ and $m$ values of  $T$\;
+add in $informations$: $replica\_consistency$ and $node\_consistency$\;
 
-	The first requisition is sent to a server that stores a replica of the root node, the consistency of the replicas nodes and the M an m values are verified for every node. If the current node T is not a leaf then the number of children is stored to control the number of wanted answers in the second step of the algorithm. For each entry E in the node, a message is sent (to process the step S1) to any server, which contains the replica of the child node of E. If the current node is a leaf, the second step, known as S2 [Aggregation] begins.
+$overlap \Leftarrow$ overlap area of $T$\;
+$dead\_area \Leftarrow$ dead area of $T$\;
+$bound \Leftarrow$ MBR of $T$\;
+$list \Leftarrow \emptyset$\;
+
+\For{for each entry $E$ in $T$}{
+	add the $MBR$ of $E$ in $list$\;
+}
+
+\eIf{$T$ is leaf}{
+ \If{$T$ is root}{
+		send response with R-Tree nodes information to app client\;
+	}
+	{
+		send msg with $informations$ to parent of $T$\;
+	}
+}
+{
+	  $entry\_info \Leftarrow$ informations sent by child node\;
+    $mbr\_consistent \Leftarrow$ verify if the bound of the child node is equal to bound of entry of T that points to this child\;
+		$informations \Leftarrow$ the child informations stored on shared memory by replicas of $T$\;
+    add in $informations$: $entries\_info$, and $mbr\_consistent$\;
+		
+		$count \Leftarrow$ retrieve the number of entries child which not sent a debugging response and decrement by 1 unit\;
+		
+    \eIf{$count$ == 0}{
+        \eIf{$T$ is root}{
+           send response with $informations$ to app client\;
+        }
+				{
+				   send msg with $informations$ to parent of $T$\;
+				}    
+		}
+		{
+			store $informations$ on shared memory\;
+		}
+            
+}
+\caption{$RDebug(T)$ 
+\label {alg:rdebug}}
+\end{algorithm2e}
+\end{minipage}
+\end{center}
+
+O algoritmo \ref{alg:rdebug} foi implementado na plataforma DistGeo para coletar as informações de depuração da R-Tree distribuída construída. Estas informações são utilizadas na plataforma para encontrar problemas de indexação e para otimizar o índice R-Tree para a execução de consultas. Uma aplicação gráfica, apresentada na Figura 4.1, foi construída para visualizar a estrutura do índice distribuído R-Tree construído, a partir das informações geradas pelo algoritmo de depuração distribuído construído na plataforma DistGeo.
+
+[Colocar a Figura aqui!!]
+
+Utilizando como base o algoritmo RDebug \ref{alg:rdebug} é possível realizar a depuração dos algoritmos de busca sobre uma R-Tree. Por exemplo, o algoritmo de Window Query apresentado na Seção \ref{sub:spatialdata}. Para adaptar o RDebug para a Window Query, basta acrescentar uma janela de consulta na primeira etapa e coletar as informações de agregação dos nós acessados na primeira etapa. Para depuração dos algoritmos que acessam diversas R-Trees, tais como o Spatial Join, o algoritmo deve ser modificado de forma drástica, pois o algoritmo pode acessar diversos caminhos diferentes.

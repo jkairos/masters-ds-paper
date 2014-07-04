@@ -17,12 +17,6 @@ Bentley, J. (1975).
   searching}.
 \newblock {\em Communications of the ACM}, 18(9):517.
 
-\bibitem[Boulic and Renault 1991]{boulic:91}
-Boulic, R. and Renault, O. (1991).
-\newblock 3d hierarchies for animation.
-\newblock In Magnenat-Thalmann, N. and Thalmann, D., editors, {\em New Trends
-  in Animation and Visualization}. John Wiley {\&} Sons ltd.
-
 \bibitem[Comer 1979]{comer1979ubiquitous}
 Comer, D. (1979).
 \newblock {Ubiquitous B-tree}.
@@ -57,10 +51,10 @@ Kamel, I. and Faloutsos, C. (1994).
 \newblock {Hilbert R-tree: An Improved R-tree using Fractals}.
 \newblock In {\em VLDB 20th}, page 509. Morgan Kaufmann Publishers Inc.
 
-\bibitem[Knuth 1984]{knuth:84}
-Knuth, D.~E. (1984).
-\newblock {\em The {\TeX} Book}.
-\newblock Addison-Wesley, 15th edition.
+\bibitem[Kerr 2009]{kerr2009alternative}
+Kerr, N. (2009).
+\newblock {Alternative Approaches to Parallel GIS Processing}.
+\newblock {\em Arizona State University - Master Thesis}.
 
 \bibitem[Koudas et~al. 1996]{koudas1996declustering}
 Koudas, N., Faloutsos, C., and Kamel, I. (1996).
@@ -77,19 +71,6 @@ Schnitzer, B. and Leutenegger, S. (1999).
 \newblock Master-client r-trees: A new parallel r-tree architecture.
 \newblock In {\em Scientific and Statistical Database Management, 1999.
   Eleventh International Conference on}, pages 68--77. IEEE.
-
-\bibitem[Smith and Jones 1999]{smith:99}
-Smith, A. and Jones, B. (1999).
-\newblock On the complexity of computing.
-\newblock In Smith-Jones, A.~B., editor, {\em Advances in Computer Science},
-  pages 555--566. Publishing Press.
-
-\bibitem[Wei et~al. 2008]{wei2008new}
-Wei, H., Wei, Z., and Yin, Q. (2008).
-\newblock A new parallel spatial query algorithm for distributed spatial
-  databases.
-\newblock In {\em Machine Learning and Cybernetics, 2008 International
-  Conference on}, volume~3, pages 1570--1574. IEEE.
 
 \bibitem[Xie et~al. 2008]{xie2008two}
 Xie, Z., Ye, Z., and Wu, L. (2008).

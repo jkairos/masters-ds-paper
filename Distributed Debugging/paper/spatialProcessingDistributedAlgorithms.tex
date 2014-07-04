@@ -2,6 +2,7 @@
 \label{sec:spatial_dist}
 
 \subsection{Data Structures for Spatial Data Processing}
+\label{sub:spatialdata}
 
 	Spatial data objects often cover areas in multi-dimensional spaces and are not well represented by point locations For example, map objects like counties, census  tracts etc occupy regions of non-zero size  in two dimensions A common operation on spatial data is a search for all objects in an area, for example to find all counties that have land within 20 miles of a particular point. This kind of spatial search occurs frequently ii computer aided design (CAD) and geo-data applications, and therefore it is important to be able to retrieve objects efficiently according to their spatial location. 
 	
@@ -46,20 +47,10 @@ ii) Concurrency control and consistency due to the parallel processing in the cl
 	The data distribution among the distributed partitions in the cluster is both the main factor to the parallel processing and also the main challenge when building the distributed index.
 	Quality of index is another factor, which influences the communication. An index with high quality reduces the searching space and the sub-tress access leading to less number of message exchange.
 	This section describes the main architecture decisions and some implementation details that molds the challenges when constructing a solution for distributed Geo-processing.
-	The distributed index has been built according to the taxonomy defined in [An et al. 1999], as follows:
-	i) Allocation Unit: block - A partition is created for every R-Tree node;
-	ii) Allocation Frequency: overflow - In the insert process, new partitions are created when a node in the tree needs to split;
-	iii) Distribution Policy: balanced - To keep the tree balanced the partitions are distributed among the cluster nodes.
+	The distributed index has been built according to the taxonomy defined in [An et al. 1999], as follows: i) Allocation Unit: block - A partition is created for every R-Tree node; ii) Allocation Frequency: overflow - In the insert process, new partitions are created when a node in the tree needs to split; iii) Distribution Policy: balanced - To keep the tree balanced the partitions are distributed among the cluster nodes.
+	
 	DistGeo is based on the shared-nothing architecture, which the nodes do not share CPU, hard disk and memory and the communication relies on message exchange. Figure 3 depicts DistGeo plataform based on peer-to-peer model, with the data manage by the cluster presented as a ring topology. It is divided in ranges of keys, which are managed for each node of the cluster. To a node join the ring it must first receive a range
-	The range of keys are known by each node in the cluster. For instance, in a ring representation, whose key set start with 0 till 100, if we have 4 nodes in the cluster, the division would be done as shown below:
-\begin{enumerate}
- \item node 1: 0-25
-  \item node 2: 25-50
-  \item node 3: 50-75
-  \item node 4: 75-100
-\end{enumerate}
-
-If we want to search for one object with key 34, we certainly should look on the node 2.
+	The range of keys are known by each node in the cluster. For instance, in a ring representation, whose key set start with 0 till 100, if we have 4 nodes in the cluster, the division could be done as shown below: a) 0-25, b) 25-50, c) 50-75 e d) 75-100. If we want to search for one object with key 34, we certainly should look on the node 2.
 
 \begin{figure}[ht]
 \centering

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2014.7.4)  4 JUL 2014 12:43
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2014.7.4)  4 JUL 2014 16:22
 entering extended mode
 **distributedDebugging.tex
 ("E:\Faculdade\Doutorado\Sistemas Distribuídos\masters-ds-paper\Distributed Debugging\paper\distributedDebugging.tex"
@@ -208,7 +208,7 @@ File: babel.def 2014/03/24 3.9k Babel common definitions
 \babel@savecnt=\count104
 \U@D=\dimen132
 )
-\l@brazilian = a dialect from \language\l@portuges 
+\l@brazil = a dialect from \language\l@portuges 
 Package babel Info: Making " an active character on input line 145.
 ))
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\inputenc.sty"
@@ -433,24 +433,7 @@ Package: fontenc 2005/09/27 v1.99g Standard LaTeX package
 File: t1enc.def 2005/09/27 v1.99g Standard LaTeX file
 LaTeX Font Info:    Redeclaring font encoding T1 on input line 43.
 ))
-("E:\Faculdade\Doutorado\Sistemas Distribuídos\masters-ds-paper\Distributed Debugging\paper\distributedDebugging.aux"
-
-! Package babel Error: You haven't defined the language brazil yet.
-
-See the babel package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.11 \select@language{brazil}
-                             
-Your command will be ignored, type <return> to proceed
-
-
-("E:\Faculdade\Doutorado\Sistemas Distribuídos\masters-ds-paper\Distributed Debugging\paper\spatialProcessingDistribute
-dAlgorithms.aux")
-("E:\Faculdade\Doutorado\Sistemas Distribuídos\masters-ds-paper\Distributed Debugging\paper\techniqueForDebuggingDistri
-butedRTree.aux")
-("E:\Faculdade\Doutorado\Sistemas Distribuídos\masters-ds-paper\Distributed Debugging\paper\conclusion.aux"))
+("E:\Faculdade\Doutorado\Sistemas Distribuídos\masters-ds-paper\Distributed Debugging\paper\distributedDebugging.aux")
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 26.
 LaTeX Font Info:    ... okay on input line 26.
 LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 26.
@@ -603,32 +586,7 @@ LaTeX Font Info:    Font shape `T1/ptm/bx/it' in size <12> not available
 ("E:\Faculdade\Doutorado\Sistemas Distribuídos\masters-ds-paper\Distributed Debugging\paper\introduction.tex"
 LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <13> not available
 (Font)              Font shape `T1/ptm/b/n' tried instead on input line 1.
-
-Underfull \hbox (badness 3009) in paragraph at lines 9--10
-[]\T1/ptm/m/n/12 Estas apli-ca-��es uti-li-zam o �n-dice es-pa-cial R-Tree para in-de-xar os da-
- []
-
-
-Underfull \hbox (badness 5519) in paragraph at lines 9--10
-\T1/ptm/m/n/12 dos ar-ma-ze-na-dos. Ge-ral-mente, as apli-ca-��es con-troem e pro-ces-sam o �n-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 9--10
-\T1/ptm/m/n/12 dice R-Tree de forma cen-tra-li-zada. En-tre-tanto, para gran-des quan-ti-dade
- []
-
-
-Underfull \hbox (badness 5741) in paragraph at lines 9--10
-\T1/ptm/m/n/12 de da-dos e usu�-rios torna-se im-pos-s�-vel pro-ces-sar os al-go-rit-mos da R-Tree
- []
-
-
-Underfull \hbox (badness 4995) in paragraph at lines 9--10
-\T1/ptm/m/n/12 de forma efi-ci-ente em ape-nas uma m�-quina. Por isso, di-ver-sos tra-ba-lhos
- []
-
-[1
+ [1
 
 {C:/Users/savio/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}]
 LaTeX Font Info:    Try loading font information for OMS+ptm on input line 20.
@@ -638,97 +596,77 @@ File: omsptm.fd
 )
 LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <12> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 20.
-) [2]
+)
 ("E:\Faculdade\Doutorado\Sistemas Distribuídos\masters-ds-paper\Distributed Debugging\paper\spatialProcessingDistribute
-dAlgorithms.tex" <r-tree-structure.png, id=15, 549.55313pt x 485.56406pt>
+dAlgorithms.tex" [2] <r-tree-structure.png, id=15, 549.55313pt x 485.56406pt>
 File: r-tree-structure.png Graphic file (type png)
  <use r-tree-structure.png>
-Package pdftex.def Info: r-tree-structure.png used on input line 20.
+Package pdftex.def Info: r-tree-structure.png used on input line 21.
 (pdftex.def)             Requested size: 213.39568pt x 188.5468pt.
-LaTeX Font Info:    Try loading font information for T1+phv on input line 21.
+LaTeX Font Info:    Try loading font information for T1+phv on input line 22.
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\psnfss\t1phv.fd"
 File: t1phv.fd 2001/06/04 scalable font definitions for T1/phv.
 )
 LaTeX Font Info:    Font shape `T1/phv/bx/n' in size <10> not available
-(Font)              Font shape `T1/phv/b/n' tried instead on input line 21.
- [3
-
-]
-<r-tree-partiotioning.png, id=19, 600.74437pt x 362.85562pt>
+(Font)              Font shape `T1/phv/b/n' tried instead on input line 22.
+ [3 <E:/Faculdade/Doutorado/Sistemas Distribuídos/masters-ds-paper/Distributed Debugging/paper/r-tree-structure.png>]
+<r-tree-partiotioning.png, id=20, 600.74437pt x 362.85562pt>
 File: r-tree-partiotioning.png Graphic file (type png)
  <use r-tree-partiotioning.png>
-Package pdftex.def Info: r-tree-partiotioning.png used on input line 38.
+Package pdftex.def Info: r-tree-partiotioning.png used on input line 39.
 (pdftex.def)             Requested size: 213.39568pt x 128.89493pt.
- [4 <E:/Faculdade/Doutorado/Sistemas Distribuídos/masters-ds-paper/Distributed Debugging/paper/r-tree-structure.png>]
+ [4 <E:/Faculdade/Doutorado/Sistemas Distribuídos/masters-ds-paper/Distributed Debugging/paper/r-tree-partiotioning.png
+>]
 <figure3.png, id=24, 600.74437pt x 413.29407pt>
 File: figure3.png Graphic file (type png)
  <use figure3.png>
-Package pdftex.def Info: figure3.png used on input line 66.
+Package pdftex.def Info: figure3.png used on input line 67.
 (pdftex.def)             Requested size: 213.39568pt x 146.81186pt.
- [5 <E:/Faculdade/Doutorado/Sistemas Distribuídos/masters-ds-paper/Distributed Debugging/paper/r-tree-partiotioning.png
-> <E:/Faculdade/Doutorado/Sistemas Distribuídos/masters-ds-paper/Distributed Debugging/paper/figure3.png>]) [6]
+)
 ("E:\Faculdade\Doutorado\Sistemas Distribuídos\masters-ds-paper\Distributed Debugging\paper\techniqueForDebuggingDistri
-butedRTree.tex"
-Overfull \hbox (5.21304pt too wide) in paragraph at lines 24--25
-[][][][][][][][][][][][][][][][][][]
- []
-
-[7
-
-
-]) [8] ("E:\Faculdade\Doutorado\Sistemas Distribuídos\masters-ds-paper\Distributed Debugging\paper\basicTechniques.tex"
-
-
-LaTeX Warning: Reference `spatial_dist' on page 9 undefined on input line 7.
-
-[9
-
-]
+butedRTree.tex" [5 <E:/Faculdade/Doutorado/Sistemas Distribuídos/masters-ds-paper/Distributed Debugging/paper/figure3.p
+ng>]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [10]
+ [6]
+LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <8> not available
+(Font)              Font shape `T1/ptm/b/n' tried instead on input line 40.
 
-LaTeX Warning: Reference `spatial_dist' on page 11 undefined on input line 46.
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
+ [7]
+Overfull \vbox (54.25711pt too high) has occurred while \output is active []
 
-LaTeX Warning: Citation `Kerr 2009' on page 11 undefined on input line 58.
+ [8])
+("E:\Faculdade\Doutorado\Sistemas Distribuídos\masters-ds-paper\Distributed Debugging\paper\basicTechniques.tex"
+[9]
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
-[11]) [12] ("E:\Faculdade\Doutorado\Sistemas Distribuídos\masters-ds-paper\Distributed Debugging\paper\conclusion.tex")
-[13
-
-]
+ [10] [11])
+("E:\Faculdade\Doutorado\Sistemas Distribuídos\masters-ds-paper\Distributed Debugging\paper\conclusion.tex" [12])
 ("E:\Faculdade\Doutorado\Sistemas Distribuídos\masters-ds-paper\Distributed Debugging\paper\distributedDebugging.bbl"
-[14
-
-]) [15]
-("E:\Faculdade\Doutorado\Sistemas Distribuídos\masters-ds-paper\Distributed Debugging\paper\distributedDebugging.aux"
-("E:\Faculdade\Doutorado\Sistemas Distribuídos\masters-ds-paper\Distributed Debugging\paper\spatialProcessingDistribute
-dAlgorithms.aux")
-("E:\Faculdade\Doutorado\Sistemas Distribuídos\masters-ds-paper\Distributed Debugging\paper\techniqueForDebuggingDistri
-butedRTree.aux")
-("E:\Faculdade\Doutorado\Sistemas Distribuídos\masters-ds-paper\Distributed Debugging\paper\conclusion.aux"))
-
-LaTeX Warning: There were undefined references.
-
- ) 
+[13]) [14]
+("E:\Faculdade\Doutorado\Sistemas Distribuídos\masters-ds-paper\Distributed Debugging\paper\distributedDebugging.aux") 
+) 
 Here is how much of TeX's memory you used:
- 6208 strings out of 493706
- 86018 string characters out of 3142166
- 189872 words of memory out of 3000000
- 9418 multiletter control sequences out of 15000+200000
- 35642 words of font info for 45 fonts, out of 3000000 for 9000
+ 5934 strings out of 493706
+ 82483 string characters out of 3142166
+ 177771 words of memory out of 3000000
+ 9155 multiletter control sequences out of 15000+200000
+ 38445 words of font info for 47 fonts, out of 3000000 for 9000
  1025 hyphenation exceptions out of 8191
- 30i,8n,32p,892b,1550s stack positions out of 5000i,500n,10000p,200000b,50000s
-{C:/Program Files (x86)/MiKTeX 2.9/fonts/enc/dvips/fontname/8r.enc}<C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/publ
-ic/amsfonts/cm/cmr8.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files (
-x86)/MiKTeX 2.9/fonts/type1/urw/courier/ucrr8a.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/urw/helvetic/uhvb8a.pf
-b><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/urw/times/utmb8a.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/urw
-/times/utmbi8a.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/urw/times/utmr8a.pfb><C:/Program Files (x86)/MiKTeX 2.
-9/fonts/type1/urw/times/utmri8a.pfb>
-Output written on distributedDebugging.pdf (15 pages, 440285 bytes).
+ 34i,20n,33p,898b,586s stack positions out of 5000i,500n,10000p,200000b,50000s
+{C:/Program Files (x86)/MiKTeX 2.9/fonts/enc/dvips/fontname/8r.enc}<C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/publi
+c/amsfonts/cm/cmmi12.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Program Files (
+x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/c
+m/cmsy10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/urw/courier/ucrr8a.pfb><C:/Program Files (x86)/MiKTeX 2.9/fo
+nts/type1/urw/helvetic/uhvb8a.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/urw/times/utmb8a.pfb><C:/Program Files 
+(x86)/MiKTeX 2.9/fonts/type1/urw/times/utmbi8a.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/urw/times/utmr8a.pfb><
+C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/urw/times/utmri8a.pfb>
+Output written on distributedDebugging.pdf (14 pages, 462769 bytes).
 PDF statistics:
- 87 PDF objects out of 1000 (max. 8388607)
+ 92 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  16 words of extra memory for PDF output out of 10000 (max. 10000000)
 

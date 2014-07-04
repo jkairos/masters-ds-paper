@@ -7,8 +7,8 @@
 
 \RequirePackage[vlined,titlenumbered,algo2e,ruled,portuguese]{algorithm2e} 
 
-\usepackage[brazilian]{babel}
-\usepackage[utf8]{inputenc}
+\usepackage[brazil]{babel}   
+\usepackage[utf8]{inputenc}  
 \usepackage[T1]{fontenc}
      
 \sloppy
@@ -34,23 +34,13 @@
 
 \input{introduction}
 
-\include{spatialProcessingDistributedAlgorithms}
+\input{spatialProcessingDistributedAlgorithms}
 
-\include{techniqueForDebuggingDistributedRTree}
+\input{techniqueForDebuggingDistributedRTree}
 
 \input{basicTechniques}
 
-\include{conclusion}
-
-\section{References}
-
-Bibliographic references must be unambiguous and uniform.  We recommend giving
-the author names references in brackets, e.g. \cite{knuth:84},
-\cite{boulic:91}, and \cite{smith:99}.
-
-The references must be listed using 12 point font size, with 6 points of space
-before each reference. The first line of each reference should not be
-indented, while the subsequent should be indented by 0.5 cm.
+\input{conclusion}
 
 \bibliographystyle{sbc}
 \bibliography{sbc-template}

@@ -1,10 +1,10 @@
-\section{Basic Techniques}
-\label{sec:debug_tec}
+\section{Related works}
+\label{sec:related}
 
 De forma geral, nenhum trabalho foi realizado na proposta de técnicas de depuração do índice R-Tree distribuído, de acordo com nosso conhecimento e observando as revisões de literatura feitas em \cite{manolopoulos2003rth,jacox2007spatial}.
 Nosso trabalho propõe um novo algoritmo de depuração do índice R-Tree distribuído e uma plataforma com arquitetura peer-to-peer para processar os algoritmos espaciais distribuídos.
 
-Os trabalhos encontrados na literatura ou propõem técnicas de depuração distribuídas em aplicações genéricas ou propõem técnicas de processamento distribuído da R-Tree. Em \ref{dist_debug} são apresentados os trabalhos que propõem técnicas de depuração distribuída e em \ref{spatial_dist} são apresentados as propostas de plataformas para processamento distribuído de algoritmos espaciais.
+Os trabalhos encontrados na literatura ou propõem técnicas de depuração distribuídas em aplicações genéricas ou propõem técnicas de processamento distribuído da R-Tree. Na Seção \ref{dist_debug} são apresentados os trabalhos que propõem técnicas de depuração distribuída e em \ref{spatialdist} são apresentados as propostas de plataformas para processamento distribuído de algoritmos espaciais.
 	
 \subsection{Distributed Debugging Techniques}
 \label{dist_debug}
@@ -43,7 +43,7 @@ In REME-D: a Reflective epidemic Message-Oriented Debugger for Ambient Oriented 
 	There are two important issues in the use of this algorithm. First, halting a process depends on the interactions between that process and other processes. The algorithm cannot collect local information about a process that has one or no communication channels connected to other processes. Furthermore, consider a process that has only infrequent interactions with other processes: That process would halt long after all other processes have halted. Miller and Choi dealt with this issue by introducing two additional control channels between a debugger process and each process in the cluster [3]. The second issue is that messages must be received in the order in which they are sent. Thus, the algorithm cannot be based directly on a datagram-type communication facility.	
 	
 \subsection{Distributed Spatial Algorithms}
-\ref{spatial_dist}
+\label{spatialdist}
 
 Esta Seção apresenta os trabalhos que propõe algoritmo para processar os algoritmos espaciais de forma distribuída.
 A primeira publicação encontrada a respeito do tema foi a M-RTree \cite{koudas1996declustering}, que apresenta um servidor master e vários servidores escravos para processar as requisições. Isto gera uma grande concentração
@@ -55,7 +55,7 @@ um cluster. O artigo propõe uma arquitetura similar à M-RTree e MC-RTree e, po
 possui os mesmos problemas descritos anteriormente.
 
 Na SD-RTree proposta em \cite{du2007sd} uma árvore binária é utilizada ao invés de uma R-Tree.
-A árvore binária causa um grande aumento no número de mensagens, já que para o mesmo conjunto de dados a árvore binária possui um número bem maior de níveis que a R-Tree. A proposta Hadoop-GIS \cite{Kerr 2009} apresenta uma alternativa para processamento paralelo de dados espaciais, mas não emprega índices para melhorar o desempenho das operações nos datasets.
+A árvore binária causa um grande aumento no número de mensagens, já que para o mesmo conjunto de dados a árvore binária possui um número bem maior de níveis que a R-Tree. A proposta Hadoop-GIS \cite{kerr2009alternative} apresenta uma alternativa para processamento paralelo de dados espaciais, mas não emprega índices para melhorar o desempenho das operações nos datasets.
 
 Em \cite{dedsi} é proposta uma plataforma de processamento distribuído de operações espaciais. A arquitetura proposta não é escalável, já que todas as mensagens devem passar por um servidor master replicado. Em [saviosbrc] é proposta uma plataforma com arquitetura peer-to-peer híbrida para processar a junção espacial distribuída. A arquitetura proposta em [saviosbrc] possui um conjunto de servidores centrais para resolução de nomes e gerenciamento de eventos. Estes servidores podem se tornar um gargalo no sistema.
 
