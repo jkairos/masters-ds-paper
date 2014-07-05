@@ -5,17 +5,35 @@ An, N., Lu, R., Qian, L., Sivasubramaniam, A., and Keefe, T. (1999).
 \newblock Storing spatial data on a network of workstations.
 \newblock {\em Cluster Computing}, 2(4):259--270.
 
+\bibitem[Bayer and McCreight 1970]{bayer1970BTree}
+Bayer, R. and McCreight, E. (1970).
+\newblock {Organization and Maintenance of Large Ordered Indices}.
+\newblock {\em ACM-SIGFTDET Workshop on Data Description and Access}, pages
+  107--141.
+
 \bibitem[Beckmann et~al. 1990]{beckmann1990r}
 Beckmann, N., Kriegel, H., Schneider, R., and Seeger, B. (1990).
 \newblock {\em The R*-tree: an efficient and robust access method for points
   and rectangles}, volume~19.
 \newblock ACM.
 
-\bibitem[Bentley 1975]{bentley1975multidimensional}
-Bentley, J. (1975).
+\bibitem[Bentley 1975a]{bentley1975multidimensional}
+Bentley, J. (1975a).
 \newblock {Multidimensional binary search trees used for associative
   searching}.
 \newblock {\em Communications of the ACM}, 18(9):517.
+
+\bibitem[Bentley 1975b]{bentley1975BTree}
+Bentley, J.~L. (1975b).
+\newblock {Multidimencional Binary Search Trees Used for Associative
+  Searching}.
+\newblock {\em ACM}, pages 509--517.
+
+\bibitem[Boix and Hondt 2011]{remeD2011}
+Boix, E.~G., C. T. V. N. C. M. W.~D. and Hondt, T.~D. (2011).
+\newblock {REME-D: a Reflective Epidemic Message-Oriented Debugger for
+  Ambient-Oriented Applications}.
+\newblock {\em ACM}, pages 1275--1281.
 
 \bibitem[Comer 1979]{comer1979ubiquitous}
 Comer, D. (1979).
@@ -71,6 +89,11 @@ Schnitzer, B. and Leutenegger, S. (1999).
 \newblock Master-client r-trees: A new parallel r-tree architecture.
 \newblock In {\em Scientific and Statistical Database Management, 1999.
   Eleventh International Conference on}, pages 68--77. IEEE.
+
+\bibitem[WH~Cheung 1990]{cheung1990Framework}
+WH~Cheung, JP~Black, E.~M. (1990).
+\newblock {A Framework for Distributed Debugging}.
+\newblock {\em IEEE}, pages 106--115.
 
 \bibitem[Xie et~al. 2008]{xie2008two}
 Xie, Z., Ye, Z., and Wu, L. (2008).

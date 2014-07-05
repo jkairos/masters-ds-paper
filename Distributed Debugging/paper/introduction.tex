@@ -1,25 +1,24 @@
 \section{Introduction}
 \label{sec:intro}
 
-A popularização da Internet trouxe grandes mudanças nos sistemas armazenam, recuperam e analisam dados referentes ao mundo
-geográfico. Devido a crescente disponibilidade de dados e aumento no número de
-usuários, houve a necessidade de distribuir os dados destas aplicações entre vários computadores. 
-Com isto emergiram as aplicações espaciais distribuídas, que podem ser definidos como um conjunto de computadores interconectados por uma rede de computadores que cooperam para a realização de geoprocessamento nas bases de dados disponíveis no sistema.
+The Internet has revolutionized the computer and Geographical Information Systems (GIS) like nothing before. In fact the Internet brought big changes how systems store, retrieve and analyze spatial data. The ever-increasing of the large geospatial datasets and the widely application of the complex geocomputation make the parallel processing of GIS an important component of high-performance computing. Thus, spatial distributed applications came on the scene. We define a spatial distributed application as one which software components located at networked computers communicate and coordinate their actions for geoprocessing.
 
-Estas aplicações utilizam o índice espacial R-Tree para indexar os dados armazenados. Geralmente, as aplicações controem e processam o índice R-Tree de forma centralizada. Entretanto, para grandes quantidade de dados e usuários torna-se impossível processar os algoritmos da R-Tree de forma eficiente em apenas uma máquina. Por isso, diversos trabalhos, tais como \cite{an1999storing,dedsi,zhong2012towards}, distribuem os nós do índice R-Tree entre várias máquinas de um cluster para que os algoritmos sejam processados de forma distribuída.
+In order to handle spatial data efficiently, a database system needs an index mechanism that will help it retrieve data items quickly according to their spatial locations. An R-tree is a dynamic index structure, which meets this need and is broadly used by in GIS. Generally, the R-Tree index is built and processed in a single machine. However, process an R-Tree in a single machine is not feasible because of the huge size of the geospatial datasets. Thus, many researches such as  \cite{an1999storing,dedsi,zhong2012towards}, show that a distributed index structure spanning the workstations can provide an efficient shared storage structure that can be used to gather geographic information more efficiently.
 
-A distribuição dos nós da R-Tree no cluster ocasionou o surgimento de um desafio: como realizar a depuração dos algoritmos espaciais em um cluster de computadores. Debugging is an essential step in the development process, albeit often neglected in the development of distributed applications due to the fact that distributed systems complicate the already difficult task of debugging.
+A big challenge though has arisen of spanning the R-Tree index structure among computers: How debug a distributed R-Tree index structure? 
 
-In recent years, researchers have been developed some helpful debugging techniques for distributed environment. Nevertheless, we have not found any technique to debug a distributed R-Tree. Por isso, este trabalho tem como objetivo propor uma técnica para depuração do algoritmo de inserção de dados da R-Tree, além de depurar a qualidade do índice distribuído construído no cluster. 
+Debugging is an essential step in the development process, albeit often neglected in the development of distributed applications due to the fact that distributed systems complicate the already difficult task of debugging.
 
-O método de depuração proposto, denominado RDebug, utiliza a própria estrutura distribuída do índice para agregar as informações de depuração. Para testar este algoritmo, a plataforma shared-nothing de processamento de algoritmos espaciais distribuídos, DistGeo, foi construída para implementar os algoritmos distribuídos da R-Tree e o algoritmo de depuração RDebug. Uma aplicação gráfica foi construída para visualizar as informações de depuração e a estrutura do índice R-Tree. 
+In recent years, researchers have been developed some helpful debugging techniques for distributed environment. Nevertheless, we have not found any technique to debug a distributed R-Tree. In this paper, we propose a debugging technique to debug the data insertion in an R-Tree, besides of debugging the quality of the index built on the cluster.
 
-As principais contribuições deste trabalho são:
+The debug method, hereafter called RDebug, uses the distributed index structure to aggregate debugging information. RDebug is used by DistGeo, a shared-nothing platform for distributed spatial algorithms processing. We also created a graphical tool to visualize the debugging information and the R-Tree index structure. 
+
+The main achievements of this paper are:
 
 \begin{itemize}
-  \item Proposta de um algoritmo para depuração do algoritmo de inserção de dados na R-Tree distribuída.
-	\item A implementação de uma plataforma shared-nothing, sem pontos de falhas, para o processamento dos algoritmos espaciais distribuídos da R-Tree.
-	\item Implementação de uma aplicação gráfica para visualização das informações de depuração e do índice R-Tree distribuído.
+  \item RDebug - A debugging technique to the data insertion algorithm in a distributed R-Tree.
+  \item DistGeo - A Shared-nothing platform, without point of failure, to process distributed spatial algorithms of an R-Tree.
+  \item A graphical tool to visualize debugging information and the distributed R-Tree index.
 \end{itemize}
 
-The rest of the paper is structured as follows. In Section \ref{sec:spatial_dist} describes the distributed processing of spatial algorithms. The Section \ref{sec:rdebug} describes our approach for distributed R-Tree debugging. In Section \ref{sec:related}, we briefly give an overview of the use of debugging techniques for distributed environments and the view of the distributed spatial algorithms. Finally, we close the paper with some concluding remarks in Section \ref{sec:conclusion}.
+The rest of the paper is structured as follows. Section \ref{sec:spatial_dist} describes the distributed processing of spatial algorithms, Section \ref{sec:rdebug} presents our approach for distributed R-Tree debugging. In Section \ref{sec:related}, we briefly give an overview of the use of debugging techniques for distributed environments and the view of the distributed spatial algorithms. Finally, we close the paper with some concluding remarks in Section \ref{sec:conclusion}.
