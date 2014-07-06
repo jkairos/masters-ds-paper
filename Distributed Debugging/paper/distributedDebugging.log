@@ -1,15 +1,9 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2014.7.1)  5 JUL 2014 11:03
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2014.7.4)  6 JUL 2014 19:26
 entering extended mode
 **distributedDebugging.tex
-("D:\Master's Degree\Distributed Systems\masters-ds-paper\Distributed Debugging\paper\distributedDebugging.tex"
-LaTeX2e <2011/06/27>
-Babel <v3.8m> and hyphenation patterns for english, afrikaans, ancientgreek, arabic, armenian, assamese, basque, bengali
-, bokmal, bulgarian, catalan, coptic, croatian, czech, danish, dutch, esperanto, estonian, farsi, finnish, french, galic
-ian, german, german-x-2013-05-26, greek, gujarati, hindi, hungarian, icelandic, indonesian, interlingua, irish, italian,
- kannada, kurmanji, latin, latvian, lithuanian, malayalam, marathi, mongolian, mongolianlmc, monogreek, ngerman, ngerman
--x-2013-05-26, nynorsk, oriya, panjabi, pinyin, polish, portuguese, romanian, russian, sanskrit, serbian, slovak, sloven
-ian, spanish, swedish, swissgerman, tamil, telugu, turkish, turkmen, ukenglish, ukrainian, uppersorbian, usenglishmax, w
-elsh, loaded.
+("E:\Faculdade\Doutorado\Sistemas Distribuídos\masters-ds-paper\Distributed Debugging\paper\distributedDebugging.tex"
+LaTeX2e <2014/05/01>
+Babel <3.9k> and hyphenation patterns for 68 languages loaded.
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\article.cls"
 Document Class: article 2007/10/19 v1.4h Standard LaTeX document class
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\size12.clo"
@@ -27,14 +21,14 @@ File: size12.clo 2007/10/19 v1.4h Standard LaTeX file (size option)
 \belowcaptionskip=\skip42
 \bibindent=\dimen102
 )
-("D:\Master's Degree\Distributed Systems\masters-ds-paper\Distributed Debugging\paper\sbc-template.sty"
+("E:\Faculdade\Doutorado\Sistemas Distribuídos\masters-ds-paper\Distributed Debugging\paper\sbc-template.sty"
 Package: sbc-template 2001/06/09
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\geometry\geometry.sty"
 Package: geometry 2010/09/12 v5.6 Page Geometry
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\graphics\keyval.sty"
-Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
+Package: keyval 2014/05/08 v1.15 key=value parser (DPC)
 \KV@toks@=\toks14
 )
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\ifpdf.sty"
@@ -62,7 +56,7 @@ Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
 \Gm@dimlist=\toks15
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\geometry\geometry.cfg"))
-("D:\Master's Degree\Distributed Systems\masters-ds-paper\Distributed Debugging\paper\caption2.sty"
+("E:\Faculdade\Doutorado\Sistemas Distribuídos\masters-ds-paper\Distributed Debugging\paper\caption2.sty"
 Package: caption2 2002/08/03 v2.1 Customising captions (AS)
 \captionmargin=\dimen111
 \captionwidth=\dimen112
@@ -75,7 +69,7 @@ Package: times 2005/04/12 PSNFSS-v9.2a (SPQR)
 )
 \c@instn=\count90
 
-(C:\Users\jkairos\AppData\Roaming\MiKTeX\2.9\tex\latex\titlesec\titlesec.sty
+(C:\Users\savio\AppData\Roaming\MiKTeX\2.9\tex\latex\titlesec\titlesec.sty
 Package: titlesec 2011/12/15 v2.10.0 Sectioning titles
 \ttl@box=\box26
 \beforetitleunit=\skip43
@@ -88,7 +82,7 @@ Package: titlesec 2011/12/15 v2.10.0 Sectioning titles
 \titlewidthfirst=\dimen119
 ))
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\graphics\graphicx.sty"
-Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
+Package: graphicx 2014/04/25 v1.0g Enhanced LaTeX Graphics (DPC,SPQR)
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\graphics\graphics.sty"
 Package: graphics 2009/02/05 v1.0o Standard LaTeX Graphics (DPC,SPQR)
@@ -115,11 +109,11 @@ Package: ltxcmds 2011/11/09 v1.22 LaTeX kernel commands for general use (HO)
 \Gin@req@height=\dimen120
 \Gin@req@width=\dimen121
 )
-(C:\Users\jkairos\AppData\Roaming\MiKTeX\2.9\tex\latex\url\url.sty
+(C:\Users\savio\AppData\Roaming\MiKTeX\2.9\tex\latex\url\url.sty
 \Urlmuskip=\muskip10
 Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 )
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\listings\listings.sty"
+(C:\Users\savio\AppData\Roaming\MiKTeX\2.9\tex\latex\listings\listings.sty
 \lst@mode=\count92
 \lst@gtempboxa=\box27
 \lst@token=\toks17
@@ -133,20 +127,40 @@ Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 \lst@lineno=\count97
 \lst@maxwidth=\dimen125
 
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\listings\lstmisc.sty"
+(C:\Users\savio\AppData\Roaming\MiKTeX\2.9\tex\latex\listings\lstmisc.sty
 File: lstmisc.sty 2014/03/04 1.5c (Carsten Heinz)
 \c@lstnumber=\count98
 \lst@skipnumbers=\count99
 \lst@framebox=\box28
 )
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\listings\listings.cfg"
+(C:\Users\savio\AppData\Roaming\MiKTeX\2.9\tex\latex\listings\listings.cfg
 File: listings.cfg 2014/03/04 1.5c listings configuration
 ))
 Package: listings 2014/03/04 1.5c (Carsten Heinz)
 
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\algorithm2e\algorithm2e.sty"
+(C:\Users\savio\AppData\Roaming\MiKTeX\2.9\tex\latex\subfigure\subfigure.sty
+Package: subfigure 2002/07/30 v2.1.4 subfigure package
+\subfigtopskip=\skip45
+\subfigcapskip=\skip46
+\subfigcaptopadj=\dimen126
+\subfigbottomskip=\skip47
+\subfigcapmargin=\dimen127
+\subfiglabelskip=\skip48
+\c@subfigure=\count100
+\c@lofdepth=\count101
+\c@subtable=\count102
+\c@lotdepth=\count103
+
+****************************************
+* Local config file subfigure.cfg used *
+****************************************
+(C:\Users\savio\AppData\Roaming\MiKTeX\2.9\tex\latex\subfigure\subfigure.cfg)
+\subfig@top=\skip49
+\subfig@bottom=\skip50
+)
+(C:\Users\savio\AppData\Roaming\MiKTeX\2.9\tex\latex\algorithm2e\algorithm2e.sty
 Package: algorithm2e 2013/01/06 v5.00 algorithms environments
-\c@AlgoLine=\count100
+\c@AlgoLine=\count104
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\ifthen.sty"
 Package: ifthen 2001/05/26 v1.1c Standard LaTeX ifthen package (DPC)
@@ -164,41 +178,41 @@ Package `algorithm2e' Release 5.0 -- january 06 2013 --
 subscribe by emailing sympa@lirmm.fr with 'subscribe <list> <firstname name>'
 - Author: Christophe Fiorio (cfiorio@um2.fr)
 ********************************************************
-\skiptotal=\skip45
-\skiplinenumber=\skip46
-\skiprule=\skip47
-\skiphlne=\skip48
-\skiptext=\skip49
-\skiplength=\skip50
-\algomargin=\skip51
-\skipalgocfslide=\skip52
-\algowidth=\dimen126
-\inoutsize=\dimen127
-\inoutindent=\dimen128
-\interspacetitleruled=\dimen129
-\interspacealgoruled=\dimen130
-\interspacetitleboxruled=\dimen131
+\skiptotal=\skip51
+\skiplinenumber=\skip52
+\skiprule=\skip53
+\skiphlne=\skip54
+\skiptext=\skip55
+\skiplength=\skip56
+\algomargin=\skip57
+\skipalgocfslide=\skip58
+\algowidth=\dimen128
+\inoutsize=\dimen129
+\inoutindent=\dimen130
+\interspacetitleruled=\dimen131
+\interspacealgoruled=\dimen132
+\interspacetitleboxruled=\dimen133
 \algocf@inoutbox=\box29
 \algocf@inputbox=\box30
-\AlCapSkip=\skip53
-\AlCapHSkip=\skip54
-\algoskipindent=\skip55
+\AlCapSkip=\skip59
+\AlCapHSkip=\skip60
+\algoskipindent=\skip61
 \algocf@nlbox=\box31
 \algocf@hangingbox=\box32
 \algocf@untilbox=\box33
-\algocf@skipuntil=\skip56
+\algocf@skipuntil=\skip62
 \algocf@capbox=\box34
-\algoheightruledefault=\skip57
-\algoheightrule=\skip58
-\algotitleheightruledefault=\skip59
-\algotitleheightrule=\skip60
-\c@algocfline=\count101
-\c@algocfproc=\count102
-\c@algocf=\count103
+\algoheightruledefault=\skip63
+\algoheightrule=\skip64
+\algotitleheightruledefault=\skip65
+\algotitleheightrule=\skip66
+\c@algocfline=\count105
+\c@algocfproc=\count106
+\c@algocf=\count107
 \algocf@algoframe=\box35
 \algocf@algobox=\box36
-) ("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\babel\babel.sty"
-Package: babel 2008/07/08 v3.8m The Babel package
+) ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\babel\babel.sty"
+Package: babel 2014/03/24 3.9k The Babel package
 
 *************************************
 * Local config file bblopts.cfg used
@@ -206,13 +220,13 @@ Package: babel 2008/07/08 v3.8m The Babel package
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\00miktex\bblopts.cfg"
 File: bblopts.cfg 2006/07/31 v1.0 MiKTeX 'babel' configuration
 )
-("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\babel\portuges.ldf"
+(C:\Users\savio\AppData\Roaming\MiKTeX\2.9\tex\latex\babel-portuges\portuges.ldf
 Language: portuges 2008/03/18 v1.2q Portuguese support from the babel system
 
-("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\babel\babel.def"
-File: babel.def 2008/07/08 v3.8m Babel common definitions
-\babel@savecnt=\count104
-\U@D=\dimen132
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\babel\babel.def"
+File: babel.def 2014/03/24 3.9k Babel common definitions
+\babel@savecnt=\count108
+\U@D=\dimen134
 )
 \l@brazil = a dialect from \language\l@portuges 
 Package babel Info: Making " an active character on input line 145.
@@ -224,20 +238,20 @@ Package: fontenc 2005/09/27 v1.99g Standard LaTeX package
 File: t1enc.def 2005/09/27 v1.99g Standard LaTeX file
 LaTeX Font Info:    Redeclaring font encoding T1 on input line 43.
 ))
-("D:\Master's Degree\Distributed Systems\masters-ds-paper\Distributed Debugging\paper\distributedDebugging.aux")
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 25.
-LaTeX Font Info:    ... okay on input line 25.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 25.
-LaTeX Font Info:    ... okay on input line 25.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 25.
-LaTeX Font Info:    ... okay on input line 25.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 25.
-LaTeX Font Info:    ... okay on input line 25.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 25.
-LaTeX Font Info:    ... okay on input line 25.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 25.
-LaTeX Font Info:    ... okay on input line 25.
-LaTeX Font Info:    Try loading font information for T1+ptm on input line 25.
+("E:\Faculdade\Doutorado\Sistemas Distribuídos\masters-ds-paper\Distributed Debugging\paper\distributedDebugging.aux")
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 26.
+LaTeX Font Info:    ... okay on input line 26.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 26.
+LaTeX Font Info:    ... okay on input line 26.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 26.
+LaTeX Font Info:    ... okay on input line 26.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 26.
+LaTeX Font Info:    ... okay on input line 26.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 26.
+LaTeX Font Info:    ... okay on input line 26.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 26.
+LaTeX Font Info:    ... okay on input line 26.
+LaTeX Font Info:    Try loading font information for T1+ptm on input line 26.
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\psnfss\t1ptm.fd"
 File: t1ptm.fd 2001/06/04 font definitions for T1/ptm.
@@ -276,114 +290,137 @@ File: t1ptm.fd 2001/06/04 font definitions for T1/ptm.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-("C:\Program Files (x86)\MiKTeX 2.9\tex\context\base\supp-pdf.mkii"
+(C:\Users\savio\AppData\Roaming\MiKTeX\2.9\tex\context\base\supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count105
-\scratchdimen=\dimen133
+\scratchcounter=\count109
+\scratchdimen=\dimen135
 \scratchbox=\box37
-\nofMPsegments=\count106
-\nofMParguments=\count107
+\nofMPsegments=\count110
+\nofMParguments=\count111
 \everyMPshowfont=\toks18
-\MPscratchCnt=\count108
-\MPscratchDim=\dimen134
-\MPnumerator=\count109
-\makeMPintoPDFobject=\count110
+\MPscratchCnt=\count112
+\MPscratchDim=\dimen136
+\MPnumerator=\count113
+\makeMPintoPDFobject=\count114
 \everyMPtoPDFconversion=\toks19
 )
-\c@lstlisting=\count111
+\c@lstlisting=\count115
 LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <16> not available
-(Font)              Font shape `T1/ptm/b/n' tried instead on input line 27.
+(Font)              Font shape `T1/ptm/b/n' tried instead on input line 28.
 LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <12> not available
-(Font)              Font shape `T1/ptm/b/n' tried instead on input line 27.
+(Font)              Font shape `T1/ptm/b/n' tried instead on input line 28.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <12> on input line 27.
+(Font)              <12> on input line 28.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <8> on input line 27.
+(Font)              <8> on input line 28.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <6> on input line 27.
-LaTeX Font Info:    Try loading font information for T1+pcr on input line 27.
+(Font)              <6> on input line 28.
+LaTeX Font Info:    Try loading font information for T1+pcr on input line 28.
  ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\psnfss\t1pcr.fd"
 File: t1pcr.fd 2001/06/04 font definitions for T1/pcr.
 )
 LaTeX Font Info:    Font shape `T1/ptm/bx/it' in size <12> not available
-(Font)              Font shape `T1/ptm/b/it' tried instead on input line 29.
+(Font)              Font shape `T1/ptm/b/it' tried instead on input line 30.
 
-("D:\Master's Degree\Distributed Systems\masters-ds-paper\Distributed Debugging\paper\introduction.tex"
+("E:\Faculdade\Doutorado\Sistemas Distribuídos\masters-ds-paper\Distributed Debugging\paper\introduction.tex"
 LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <13> not available
 (Font)              Font shape `T1/ptm/b/n' tried instead on input line 1.
  [1
 
-{C:/Users/jkairos/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}]
+{C:/Users/savio/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}]
 LaTeX Font Info:    Try loading font information for OMS+ptm on input line 19.
- ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\psnfss\omsptm.fd"
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\psnfss\omsptm.fd"
 File: omsptm.fd 
 )
 LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <12> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 19.
 )
-("D:\Master's Degree\Distributed Systems\masters-ds-paper\Distributed Debugging\paper\spatialProcessingDistributedAlgori
-thms.tex" [2] <r-tree-structure.png, id=15, 549.55313pt x 485.56406pt>
-File: r-tree-structure.png Graphic file (type png)
- <use r-tree-structure.png>
-Package pdftex.def Info: r-tree-structure.png used on input line 21.
-(pdftex.def)             Requested size: 213.39568pt x 188.5468pt.
-LaTeX Font Info:    Try loading font information for T1+phv on input line 22.
+("E:\Faculdade\Doutorado\Sistemas Distribuídos\masters-ds-paper\Distributed Debugging\paper\spatialProcessingDistribute
+dAlgorithms.tex" <rtree.png, id=11, 469.2732pt x 146.4672pt>
+File: rtree.png Graphic file (type png)
+ <use rtree.png>
+Package pdftex.def Info: rtree.png used on input line 20.
+(pdftex.def)             Requested size: 192.0548pt x 59.94241pt.
+
+<rtree-space.png, id=13, 650.9118pt x 260.172pt>
+File: rtree-space.png Graphic file (type png)
+ <use rtree-space.png>
+Package pdftex.def Info: rtree-space.png used on input line 25.
+(pdftex.def)             Requested size: 192.0548pt x 76.76198pt.
+LaTeX Font Info:    Try loading font information for T1+phv on input line 26.
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\psnfss\t1phv.fd"
 File: t1phv.fd 2001/06/04 scalable font definitions for T1/phv.
 )
 LaTeX Font Info:    Font shape `T1/phv/bx/n' in size <10> not available
-(Font)              Font shape `T1/phv/b/n' tried instead on input line 22.
- [3 <D:/Master's Degree/Distributed Systems/masters-ds-paper/Distributed Debugging/paper/r-tree-structure.png>] <r-tree-
-partiotioning.png, id=20, 600.74437pt x 362.85562pt>
+(Font)              Font shape `T1/phv/b/n' tried instead on input line 26.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[2] <figure3.png, id=20, 600.74437pt x 413.29407pt>
+File: figure3.png Graphic file (type png)
+ <use figure3.png>
+Package pdftex.def Info: figure3.png used on input line 46.
+(pdftex.def)             Requested size: 213.39568pt x 146.81186pt.
+ [3 <E:/Faculdade/Doutorado/Sistemas Distribuídos/masters-ds-paper/Distributed Debugging/paper/rtree.png> <E:/Faculdade
+/Doutorado/Sistemas Distribuídos/masters-ds-paper/Distributed Debugging/paper/rtree-space.png>] <r-tree-partiotioning.p
+ng, id=27, 600.74437pt x 362.85562pt>
 File: r-tree-partiotioning.png Graphic file (type png)
 
 <use r-tree-partiotioning.png>
-Package pdftex.def Info: r-tree-partiotioning.png used on input line 39.
+Package pdftex.def Info: r-tree-partiotioning.png used on input line 59.
 (pdftex.def)             Requested size: 213.39568pt x 128.89493pt.
- <figure3.png, id=21, 600.74437pt x 413.29407pt>
-File: figure3.png Graphic file (type png)
- <use figure3.png>
-Package pdftex.def Info: figure3.png used on input line 57.
-(pdftex.def)             Requested size: 213.39568pt x 146.81186pt.
- [4 <D:/Master's Degree/Distributed Systems/masters-ds-paper/Distributed Debugging/paper/r-tree-partiotioning.png>])
-("D:\Master's Degree\Distributed Systems\masters-ds-paper\Distributed Debugging\paper\techniqueForDebuggingDistributedRT
-ree.tex" [5 <D:/Master's Degree/Distributed Systems/masters-ds-paper/Distributed Debugging/paper/figure3.png>]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [6]
+ [4 <E:/Faculdade/Doutorado/Sistemas Distribuídos/masters-ds-paper/Distributed Debugging/paper/figure3.png> <E:/Faculda
+de/Doutorado/Sistemas Distribuídos/masters-ds-paper/Distributed Debugging/paper/r-tree-partiotioning.png>])
+("E:\Faculdade\Doutorado\Sistemas Distribuídos\masters-ds-paper\Distributed Debugging\paper\techniqueForDebuggingDistri
+butedRTree.tex" [5]
 LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <8> not available
 (Font)              Font shape `T1/ptm/b/n' tried instead on input line 40.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [7]
-Overfull \vbox (54.25711pt too high) has occurred while \output is active []
+ [6]
+Overfull \vbox (11.05714pt too high) has occurred while \output is active []
 
- [8])
-("D:\Master's Degree\Distributed Systems\masters-ds-paper\Distributed Debugging\paper\basicTechniques.tex" [9])
-("D:\Master's Degree\Distributed Systems\masters-ds-paper\Distributed Debugging\paper\conclusion.tex" [10])
-("D:\Master's Degree\Distributed Systems\masters-ds-paper\Distributed Debugging\paper\distributedDebugging.bbl" [11])
-[12] ("D:\Master's Degree\Distributed Systems\masters-ds-paper\Distributed Debugging\paper\distributedDebugging.aux") ) 
+ [7]
+<rdebug-vis.jpg, id=41, 501.875pt x 501.875pt>
+File: rdebug-vis.jpg Graphic file (type jpg)
+ <use rdebug-vis.jpg>
+Package pdftex.def Info: rdebug-vis.jpg used on input line 104.
+(pdftex.def)             Requested size: 213.39568pt x 213.39743pt.
+)
+("E:\Faculdade\Doutorado\Sistemas Distribuídos\masters-ds-paper\Distributed Debugging\paper\basicTechniques.tex"
+Underfull \vbox (badness 1859) has occurred while \output is active []
+
+ [8 <E:/Faculdade/Doutorado/Sistemas Distribuídos/masters-ds-paper/Distributed Debugging/paper/rdebug-vis.jpg>] [9])
+("E:\Faculdade\Doutorado\Sistemas Distribuídos\masters-ds-paper\Distributed Debugging\paper\conclusion.tex")
+("E:\Faculdade\Doutorado\Sistemas Distribuídos\masters-ds-paper\Distributed Debugging\paper\distributedDebugging.bbl"
+[10] [11]) [12]
+("E:\Faculdade\Doutorado\Sistemas Distribuídos\masters-ds-paper\Distributed Debugging\paper\distributedDebugging.aux")
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+ ) 
 Here is how much of TeX's memory you used:
- 5472 strings out of 493921
- 77348 string characters out of 3144871
- 165282 words of memory out of 3000000
- 8683 multiletter control sequences out of 15000+200000
- 38445 words of font info for 47 fonts, out of 3000000 for 9000
- 841 hyphenation exceptions out of 8191
- 34i,20n,33p,898b,574s stack positions out of 5000i,500n,10000p,200000b,50000s
-{
-C:/Program Files (x86)/MiKTeX 2.9/fonts/enc/dvips/fontname/8r.enc}<C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/
-amsfonts/cm/cmmi12.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Program Files (x8
-6)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/
-cmsy10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/urw/courier/ucrr8a.pfb><C:/Program Files (x86)/MiKTeX 2.9/font
-s/type1/urw/helvetic/uhvb8a.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/urw/times/utmb8a.pfb><C:/Program Files (x
-86)/MiKTeX 2.9/fonts/type1/urw/times/utmbi8a.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/urw/times/utmr8a.pfb><C:
-/Program Files (x86)/MiKTeX 2.9/fonts/type1/urw/times/utmri8a.pfb>
-Output written on distributedDebugging.pdf (12 pages, 457836 bytes).
+ 5715 strings out of 493706
+ 81252 string characters out of 3142166
+ 177235 words of memory out of 3000000
+ 8941 multiletter control sequences out of 15000+200000
+ 39523 words of font info for 48 fonts, out of 3000000 for 9000
+ 1025 hyphenation exceptions out of 8191
+ 34i,20n,33p,898b,582s stack positions out of 5000i,500n,10000p,200000b,50000s
+{C:/Program Files (x86)/MiKTeX 2.9/fonts/enc/dvips/fontname/8r.enc}<C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/publ
+ic/amsfonts/cm/cmmi12.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Program Files 
+(x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/
+cm/cmsy10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/urw/courier/ucrr8a.pfb><C:/Program Files (x86)/MiKTeX 2.9/f
+onts/type1/urw/helvetic/uhvb8a.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/urw/times/utmb8a.pfb><C:/Program Files
+ (x86)/MiKTeX 2.9/fonts/type1/urw/times/utmbi8a.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/urw/times/utmr8a.pfb>
+<C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/urw/times/utmri8a.pfb>
+Output written on distributedDebugging.pdf (12 pages, 514972 bytes).
 PDF statistics:
- 85 PDF objects out of 1000 (max. 8388607)
+ 90 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 16 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 26 words of extra memory for PDF output out of 10000 (max. 10000000)
 
