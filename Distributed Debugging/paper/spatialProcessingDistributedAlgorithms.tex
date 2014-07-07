@@ -43,8 +43,8 @@ This work developed a platform, namely DistGeo, to process the spatial operation
 
 \begin{figure}[ht]
 \centering
-\includegraphics[width=.5\textwidth]{figure3.png}
-\caption{Figure 3}
+\includegraphics[width=.45\textwidth]{figure3.png}
+\caption{DistGeo Platform}
 \label{fig: Figure 3}
 \end{figure}
 	
@@ -57,7 +57,7 @@ Figure \ref{fig:partitioning} illustrates the structure of a Distributed R-Tree 
 \begin{figure}[ht]
 \centering
 \includegraphics[width=.5\textwidth]{r-tree-partiotioning.png}
-\caption{R-Tree Partitioning in a shared-nothing architecture}
+\caption{R-Tree Partitioning in DistGeo}
 \label{fig:partitioning}
 \end{figure}
 
@@ -67,4 +67,4 @@ Insertions and searching in a distributed R-Tree are similar to the non-distribu
 	
 Reliability and fault-tolerance are implemented storing the R-Tree nodes in multiple nodes in the cluster. Each node N receives a key, which is used to store the node in a server S responsible for ring range, replicating the node N to the next two servers in S (clockwise). In a distributed R-Tree, the requests are always sent to the cluster's node that stores the root node of the R-tree. If a message is sent to a bode N, in the moment of R-Tree traversal an active server is elected, and replicates the data in this node to further requisition processing
 
-	Some optimizations proposed in \cite{beckmann1990r} to reduce the overlap and the dead area were adapted and implemented on DistGeo. Reducing the overlap and dead area minimize the number of messages exchange in network on search algorithms, because the query access less nodes during the tree traversal (see Sub-Section \ref{sub:spatialdata}). This works implemented a new distributed debug algorithm (RDebug) that helps to reduce the overlap and dead area. This algorithm will be presented in Section \ref{sec:rdebug}.
+	Some optimizations proposed in \cite{beckmann1990r} to reduce the overlap and the dead area were adapted and implemented on DistGeo. Reducing the overlap and dead area minimize the number of messages exchange in network on search algorithms, because the query access less nodes during the tree traversal (see Sub-Section \ref{sub:spatialdata}). This works implements a new distributed debug algorithm of the R-Tree index (RDebug) that helps to reduce the overlap and dead area. This algorithm will be presented in Section \ref{sec:rdebug}.
