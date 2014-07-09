@@ -29,11 +29,10 @@ Bentley, J.~L. (1975b).
   Searching}.
 \newblock {\em ACM}, pages 509--517.
 
-\bibitem[Boix and Hondt 2011]{remeD2011}
-Boix, E.~G., C. T. V. N. C. M. W.~D. and Hondt, T.~D. (2011).
-\newblock {REME-D: a Reflective Epidemic Message-Oriented Debugger for
-  Ambient-Oriented Applications}.
-\newblock {\em ACM}, pages 1275--1281.
+\bibitem[C.~E.~Mcdowell 1989]{mcdowell1989Debugging}
+C.~E.~Mcdowell, D. P.~H. (1989).
+\newblock {Debugging concurrent programs}.
+\newblock {\em ACM Computing Surveys}, 21:593--622.
 
 \bibitem[Comer 1979]{comer1979ubiquitous}
 Comer, D. (1979).
@@ -53,11 +52,41 @@ du~Mouza, C., Litwin, W., and Rigaux, P. (2007).
 \newblock In {\em Data Engineering, 2007. ICDE 2007. IEEE 23rd International
   Conference on}, pages 296--305. IEEE.
 
+\bibitem[Elshoff 1989]{amoeba1989}
+Elshoff, I. J.~P. (1989).
+\newblock {A distributed debugger for amoeba}.
+\newblock In {\em In Symposium on Parallel and distributed tools}, pages 1--10.
+  SIGPLAN Not.
+
+\bibitem[Fonseca et~al. 2007]{xtrace2007}
+Fonseca, R., Porter, G., Katz, R.~H., Shenker, S., and Stoica, I. (2007).
+\newblock {X-Trace: A pervasive network tracing framework}.
+\newblock In {\em 4th USENIX Symposium on Networked Systems Design &
+  Implementation}, pages 271--284. Cambridge MA, USA.
+
+\bibitem[G. et~al. 2011]{remeD2011}
+G., B.~E., V., C.~T., C., N., D., M.~W., and D, H.~T. (2011).
+\newblock {REME-D: a Reflective Epidemic Message-Oriented Debugger for
+  Ambient-Oriented Applications}.
+\newblock {\em ACM}, pages 1275--1281.
+
+\bibitem[Gottbrath 2009]{totalView2009}
+Gottbrath, C. (2009).
+\newblock {Deterministically troubleshooting network applications}.
+\newblock In {\em Technical report, TotalView Technologies}. TotalView
+  Technologies.
+
 \bibitem[Guttman 1984]{guttman1984r}
 Guttman, A. (1984).
 \newblock {\em R-trees: a dynamic index structure for spatial searching},
   volume~14.
 \newblock ACM.
+
+\bibitem[Hood 1996]{p2d21996}
+Hood, R. (1996).
+\newblock {The p2d2 project: building a portable distributed debugger}.
+\newblock In {\em In Symposium on Parallel and distributed tools}, pages
+  127--136. ACM.
 
 \bibitem[Jacox and Samet 2007]{jacox2007spatial}
 Jacox, E. and Samet, H. (2007).
@@ -89,6 +118,11 @@ Schnitzer, B. and Leutenegger, S. (1999).
 \newblock Master-client r-trees: A new parallel r-tree architecture.
 \newblock In {\em Scientific and Statistical Database Management, 1999.
   Eleventh International Conference on}, pages 68--77. IEEE.
+
+\bibitem[Stanley et~al. 2009]{causeway2009}
+Stanley, T., Close, T., and Miller, M. (2009).
+\newblock {Causeway: A message-oriented distributed debugger}.
+\newblock In {\em Technical Report HPL-2009-78}. HP Laboratories.
 
 \bibitem[WH~Cheung 1990]{cheung1990Framework}
 WH~Cheung, JP~Black, E.~M. (1990).

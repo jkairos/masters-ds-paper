@@ -7,6 +7,6 @@ We have seen researches on spatial data processing and distributed debugging, bu
 
 RDebug, has been implemented in DistGeo platform. The R-Tree nodes are distributed and replicated over the cluster. Thus, RDebug can be processed without bottlenecks and point of failures. Besides, the R-Tree replicated nodes in the cluster allow load-balancing in the distributed R-Tree index traversal. During the traversal, at every node access of the R-Tree, the traversal might go to a node of the cluster with less workload increasing RDebug performance. The information exchange of the machines statuses is done trough the Gossip algorithm.
 
-A graphical tool has been created to visualize the structure of the distributed R-Tree index and the debugging information about the index building. With these input we can identify discrepancies in the index building and optimize it.
+A graphical tool(RDebug Visualizer) has been created to visualize the structure of the distributed R-Tree index and the debugging information about the index building. With these input we can identify discrepancies in the index building and optimize it.
 
 Ongoing work includes modify the RDebug algorithm to debug the Window Query and Join Query searching algorithms. The RDebug algorithm is easily adapted to gather debugging information for Window Query. Whereas, for Join Query algorithm, RDebug must be changed considerably, since the traversal is processed in two different distributed R-Trees. Another ongoing work is to realize performance tests of the RDebug algorithm in DistGeo platform.
