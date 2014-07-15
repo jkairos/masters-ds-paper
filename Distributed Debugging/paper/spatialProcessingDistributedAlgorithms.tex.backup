@@ -85,9 +85,9 @@ ii) Allocation Frequency: overflow - In the insert process, new partitions are c
 iii) Distribution Policy: balanced - To keep the tree balanced the partitions are distributed among the cluster nodes.
 	
 Reliability and fault-tolerance are implemented on DistGeo storing the R-Tree nodes in multiple servers in the cluster. 
-Each R-Tree node N receives a key, which is used to store the node in a server S responsible for ring range, replicating the node N to the next two servers in S (clockwise). 
-If a message is sent to N, is choosed one of the servers that store a replica of N.
-The query requests are always sent to one of the cluster's server that stores the root node of the R-tree. 
+Each node N receives a key, which is used to store the node in a server S responsible for ring range, replicating the node N to the next two servers in S (clockwise). 
+In a distributed R-Tree, the requests are always sent to one of the cluster's server that stores the root node of the R-tree. 
+If a message is sent to a node N, in the moment of R-Tree traversal an replica server is elected, and replicates the data in this node to further requisition processing
 
 Some optimizations proposed in \cite{beckmann1990r} to reduce the overlap and the dead area were adapted and implemented on DistGeo. 
 Reducing the overlap and dead area minimize the number of messages exchange in network on search algorithms, because the query access less nodes during the tree traversal (see Sub-Section \ref{sub:spatialdata}). 

@@ -1,24 +1,34 @@
 \section{Introduction}
 \label{sec:intro}
 
-The Internet has revolutionized the computer and Geographical Information Systems (GIS) like nothing before. In fact the Internet brought big changes how systems store, retrieve and analyze spatial data. The ever-increasing of the large geospatial datasets and the widely application of the complex geocomputation make the parallel processing of GIS an important component of high-performance computing. Thus, spatial distributed applications came on the scene, a spatial distributed application is one which software components located at networked computers communicate and coordinate their actions for geoprocessing.
+The Internet has revolutionized the computer and Geographical Information Systems (GIS) like nothing before. In fact the Internet brought big changes how systems store, retrieve and analyze spatial data. 
+The ever-increasing of the large geospatial datasets and the widely application of the complex geocomputation make the parallel processing of GIS an important component of high-performance computing. 
+Thus, spatial distributed applications came on the scene to process the spatial operations in a cluster of computers.
 
-In order to handle spatial data efficiently, a database system needs an index mechanism that will help it retrieve data items quickly according to their spatial locations. An R-tree is a dynamic index structure, which meets this requirement and is broadly used in GIS. Generally, the R-Tree index is built and processed in a single machine. However, process an R-Tree in a single machine is not feasible because of the huge size of the geospatial datasets. Thus, many researches such as  \cite{an1999storing,dedsi,zhong2012towards}, show that a distributed index structure spanning the workstations can provide an efficient shared storage structure that can be used to gather geographic information more efficiently.
+In order to handle spatial data efficiently, a database system needs an index mechanism that will help it retrieve data items quickly according to their spatial locations. 
+The R-Tree is the most commonly used spatial indexing on databases. Generally, the R-Tree index is built and processed in a single machine. 
+However, process an R-Tree in a single machine is not feasible because of the huge size of the geospatial datasets. 
+Thus, many researches such as  \cite{an1999storing,dedsi,zhong2012towards}, 
+show that a distributed index structure spanning the workstations can provide an efficient shared storage structure that can be used to gather geographic information more efficiently.
 
-A big challenge though has arisen of spanning the R-Tree index structure among computers: How debug a distributed R-Tree index structure? 
+A big challenge though has arisen of spanning the R-Tree index structure among computers: How to debug the building of the distributed R-Tree? 
 
 Debugging is an essential step in the development process, albeit often neglected in the development of distributed applications due to the fact that distributed systems complicate the already difficult task of debugging \cite{cheung1990Framework}.
+In recent years, researchers have been developed some helpful debugging techniques for distributed environment. Nevertheless, we have not found any technique to debug a distributed R-Tree. 
 
-In recent years, researchers have been developed some helpful debugging techniques for distributed environment. Nevertheless, we have not found any technique to debug a distributed R-Tree. In this paper, we propose a debugging technique for data insertion in an R-Tree, besides of debugging the quality of the index built on the cluster.
-
-The debug method, hereafter called RDebug, uses the distributed index structure to aggregate debugging information. RDebug is used by DistGeo, a shared-nothing platform for distributed spatial algorithms processing. We also created a graphical tool to visualize the debugging information and the R-Tree index structure, called RDebug Visualizer. 
+In this paper, we propose a debugging technique for distributed R-Tree building. The debug method, called RDebug, uses the distributed index structure to aggregate debugging information. 
+RDebug is used by DistGeo, a shared-nothing platform for distributed spatial algorithms processing. 
+We also created a graphical tool to visualize the debugging information and the R-Tree index structure, called RDebug Visualizer. 
 
 The main achievements of this paper are:
 
 \begin{itemize}
-  \item RDebug - A debugging technique to the data insertion algorithm in a distributed R-Tree.
-  \item DistGeo - A Shared-nothing platform, without point of failure, to process distributed spatial algorithms of an R-Tree.
+  \item RDebug - A debugging technique for distributed R-Tree building.
+  \item DistGeo - A peer-to-peer platform, without point of failure, to process distributed spatial algorithms of an R-Tree.
   \item RDebug Visualizer - A graphical tool to visualize debugging information and the distributed R-Tree index.
 \end{itemize}
 
-The rest of the paper is structured as follows. Section \ref{sec:spatial_dist} describes the distributed processing of spatial algorithms, Section \ref{sec:rdebug} presents our approach for distributed R-Tree debugging. In Section \ref{sec:related}, we briefly give an overview of the use of debugging techniques for distributed environments and the view of the distributed spatial algorithms. Finally, we close the paper with some concluding remarks in Section \ref{sec:conclusion}.
+The rest of the paper is structured as follows. Section \ref{sec:spatial_dist} describes the distributed processing of spatial algorithms, 
+Section \ref{sec:rdebug} presents our approach for distributed R-Tree debugging. 
+In Section \ref{sec:related}, we briefly give an overview of the use of debugging techniques for distributed environments and the view of the distributed spatial algorithms. 
+Finally, we close the paper with some concluding remarks in Section \ref{sec:conclusion}.
