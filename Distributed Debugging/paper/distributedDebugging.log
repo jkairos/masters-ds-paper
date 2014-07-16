@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012/Debian) (format=pdflatex 2014.7.10)  15 JUL 2014 16:34
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012/Debian) (format=pdflatex 2014.7.10)  16 JUL 2014 16:09
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -175,6 +175,20 @@ Package: algorithm2e 2008/00/00 v3.10 algorithms environments
 (/usr/share/texlive/texmf-dist/tex/latex/base/ifthen.sty
 Package: ifthen 2001/05/26 v1.1c Standard LaTeX ifthen package (DPC)
 )
+
+! LaTeX Error: Unknown option `algorithm2e' for package `algorithm2e'.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.970 \@algocf@algotitleofalgo
+                              % fix name for \TitleOfAlgo to \algorithmcfnam...
+
+The option `algorithm2e' was not declared in package `algorithm2e', perhaps you
+
+misspelled its name. Try typing  <return>  to proceed.
+
 (/usr/share/texlive/texmf-dist/tex/latex/tools/xspace.sty
 Package: xspace 2009/10/20 v1.13 Space after command names (DPC,MH)
 )
@@ -419,15 +433,27 @@ Underfull \vbox (badness 1383) has occurred while \output is active []
 Underfull \vbox (badness 1348) has occurred while \output is active []
 
  [5]
-LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <8> not available
-(Font)              Font shape `T1/ptm/b/n' tried instead on input line 42.
 
+! LaTeX Error: Environment algorithm2e undefined.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.58 \begin{algorithm2e}
+                        [H]
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <8> not available
+(Font)              Font shape `T1/ptm/b/n' tried instead on input line 68.
 Runaway argument?
 { stores the number of children entries in each replica server of T\;\ETC.
 ! Paragraph ended before \algocf@eIfthen was complete.
 <to be read again> 
                    \par 
-l.46 
+l.72 
      
 I suspect you've forgotten a `}', causing me to apply this
 control sequence to too much text. How can we recover?
@@ -436,13 +462,68 @@ My plan is to forget the whole thing and hope for the best.
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.53 ...he consistency of $T$ in others replicas\;
+l.76    }
+         
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Extra }, or forgotten $.
+\algocf@Vsline ...vance \hsize by -\skiplength #1}
+                                                  }}\algocf@pop {\skiprule }
+l.76    }
+         
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+! Extra }, or forgotten $.
+\algocf@Vsline ...ance \hsize by -\skiplength #1}}
+                                                  }\algocf@pop {\skiprule }
+l.76    }
+         
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+! Extra }, or forgotten $.
+\algocf@Vsline ...nce \hsize by -\skiplength #1}}}
+                                                  \algocf@pop {\skiprule }
+l.76    }
+         
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.76    }
+         
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 76--76
+[]|[]$\OML/cmm/m/it/12 server \OMS/cmsy/m/n/12  $ \T1/ptm/m/n/12 choose one ser
+ver, ran-domly, that stores one replica of
+ []
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.79 ...he consistency of $T$ in others replicas\;
                                                   
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
 
 ! Extra }, or forgotten $.
-l.55 }
+l.81 }
       
 I've deleted a group-closing symbol because it seems to be
 spurious, as in `$x}$'. But perhaps the } is legitimate and
@@ -453,7 +534,7 @@ deleted material, e.g., by typing `I$}'.
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.56 
+l.82 
      
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
@@ -461,7 +542,7 @@ you left one out. Proceed, with fingers crossed.
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.59 ...ored on shared memory by replicas of $T$\;
+l.85 ...ored on shared memory by replicas of $T$\;
                                                   
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
@@ -469,7 +550,7 @@ you left one out. Proceed, with fingers crossed.
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.60 $replica\_consistency \Leftarrow
+l.86 $replica\_consistency \Leftarrow
                                      $ verify the consistency of $T$ in othe...
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
@@ -477,7 +558,7 @@ you left one out. Proceed, with fingers crossed.
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.60 ...he consistency of $T$ in others replicas\;
+l.86 ...he consistency of $T$ in others replicas\;
                                                   
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
@@ -485,7 +566,7 @@ you left one out. Proceed, with fingers crossed.
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.61 $node\_consistency \Leftarrow
+l.87 $node\_consistency \Leftarrow
                                   $	verify the consistency of $M$ and $m$ va...
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
@@ -493,7 +574,7 @@ you left one out. Proceed, with fingers crossed.
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.61 ...onsistency of $M$ and $m$ values of  $T$\;
+l.87 ...onsistency of $M$ and $m$ values of  $T$\;
                                                   
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
@@ -501,7 +582,7 @@ you left one out. Proceed, with fingers crossed.
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.62 $overlap \Leftarrow
+l.88 $overlap \Leftarrow
                         $ overlap area of $T$\;
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
@@ -509,7 +590,7 @@ you left one out. Proceed, with fingers crossed.
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.62 $overlap \Leftarrow$ overlap area of $T$\;
+l.88 $overlap \Leftarrow$ overlap area of $T$\;
                                                
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
@@ -517,7 +598,7 @@ you left one out. Proceed, with fingers crossed.
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.63 $dead\_area \Leftarrow
+l.89 $dead\_area \Leftarrow
                            $ dead area of $T$\;
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
@@ -525,7 +606,7 @@ you left one out. Proceed, with fingers crossed.
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.63 $dead\_area \Leftarrow$ dead area of $T$\;
+l.89 $dead\_area \Leftarrow$ dead area of $T$\;
                                                
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
@@ -533,7 +614,7 @@ you left one out. Proceed, with fingers crossed.
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.64 $bound \Leftarrow
+l.90 $bound \Leftarrow
                       $ MBR of $T$\;
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
@@ -541,7 +622,7 @@ you left one out. Proceed, with fingers crossed.
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.64 $bound \Leftarrow$ MBR of $T$\;
+l.90 $bound \Leftarrow$ MBR of $T$\;
                                     
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
@@ -549,94 +630,66 @@ you left one out. Proceed, with fingers crossed.
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.66 
+l.92 
      
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
 
-! You can't use `\prevdepth' in restricted horizontal mode.
-\nointerlineskip ->\prevdepth 
-                              -\@m \p@ 
-l.74 }
-      
-Sorry, but I'm not programmed to handle this case;
-I'll just pretend that you didn't ask for it.
-If you're in the wrong mode, you might be able to
-return to the right one by typing `I}' or `I$' or `I\par'.
+
+Underfull \hbox (badness 3471) in paragraph at lines 85--92
+[]|[]$\OML/cmm/m/it/12 information \OMS/cmsy/m/n/12 ($ \T1/ptm/m/n/12 the child
+'s in-for-ma-tion stored on shared mem-ory by repli-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 85--92
+\T1/ptm/m/n/12 cas of $\OML/cmm/m/it/12 T$$ $\T1/ptm/m/n/12 replica_consistency
+ $\OMS/cmsy/m/n/12 ($ \T1/ptm/m/n/12 ver-ify the con-sis-tency of $\OML/cmm/m/i
+t/12 T$ \T1/ptm/m/n/12 in oth-ers
+ []
+
+
+Underfull \hbox (badness 3449) in paragraph at lines 85--92
+\T1/ptm/m/n/12 replicas$ $node_consistency $\OMS/cmsy/m/n/12 ($ \T1/ptm/m/n/12 
+ver-ify the con-sis-tency of $\OML/cmm/m/it/12 M$ \T1/ptm/m/n/12 and $\OML/cmm/
+m/it/12 m$ \T1/ptm/m/n/12 val-ues of
+ []
 
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.74 }
-      
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-! Missing number, treated as zero.
-<to be read again> 
-                   \advance 
-l.74 }
-      
-A number should have been here; I inserted `0'.
-(If you can't figure out why I needed to see a number,
-look up `weird error' in the index to The TeXbook.)
-
-! Illegal unit of measure (pt inserted).
-<to be read again> 
-                   \advance 
-l.74 }
-      
-Dimensions can be in units of em, ex, in, pt, pc,
-cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
-I'll assume that you meant to say pt, for printer's points.
-To recover gracefully from this error, it's best to
-delete the erroneous units; e.g., type `2' to delete
-two letters. (See Chapter 27 of The TeXbook.)
-
-! You can't use `\moveright' in math mode.
-\algocf@push ...dvance \skiptotal by #1\moveright 
-                                                  #1
-l.74 }
-      
-Sorry, but I'm not programmed to handle this case;
-I'll just pretend that you didn't ask for it.
-If you're in the wrong mode, you might be able to
-return to the right one by typing `I}' or `I$' or `I\par'.
-
-! Missing number, treated as zero.
-<to be read again> 
-                   \hbox 
-l.74 }
-      
-A number should have been here; I inserted `0'.
-(If you can't figure out why I needed to see a number,
-look up `weird error' in the index to The TeXbook.)
-
-! Illegal unit of measure (pt inserted).
-<to be read again> 
-                   \hbox 
-l.74 }
-      
-Dimensions can be in units of em, ex, in, pt, pc,
-cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
-I'll assume that you meant to say pt, for printer's points.
-To recover gracefully from this error, it's best to
-delete the erroneous units; e.g., type `2' to delete
-two letters. (See Chapter 27 of The TeXbook.)
-
-! Missing $ inserted.
-<inserted text> 
-                $
-l.74 }
-      
+l.100 }
+       
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
 
 ! Extra }, or forgotten $.
-\algocf@Vline ...dvance \hsize by -\skiplength #1}
-                                                  \Hlne }}\vskip \skiphlne \...
-l.74 }
-      
+\algocf@Vsline ...vance \hsize by -\skiplength #1}
+                                                  }}\algocf@pop {\skiprule }
+l.100 }
+       
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+! Extra }, or forgotten $.
+\algocf@Vsline ...ance \hsize by -\skiplength #1}}
+                                                  }\algocf@pop {\skiprule }
+l.100 }
+       
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+! Extra }, or forgotten $.
+\algocf@Vsline ...nce \hsize by -\skiplength #1}}}
+                                                  \algocf@pop {\skiprule }
+l.100 }
+       
 I've deleted a group-closing symbol because it seems to be
 spurious, as in `$x}$'. But perhaps the } is legitimate and
 you forgot something else, as in `\hbox{$x}'. In such cases
@@ -646,35 +699,24 @@ deleted material, e.g., by typing `I$}'.
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.74 }
-      
+l.100 }
+       
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
-
-! Missing } inserted.
-<inserted text> 
-                }
-l.74 }
-      
-I've inserted something that you may have forgotten.
-(See the <inserted text> above.)
-With luck, this will get me unwedged. But if you
-really didn't forget anything, try typing `2' now; then
-my insertion and my current dilemma will both disappear.
 
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.74 }
-      
+l.100 }
+       
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
 
 ! Extra }, or forgotten $.
 <argument> ...h $information$ to parent of $T$\; }
                                                    
-l.74 }
-      
+l.100 }
+       
 I've deleted a group-closing symbol because it seems to be
 spurious, as in `$x}$'. But perhaps the } is legitimate and
 you forgot something else, as in `\hbox{$x}'. In such cases
@@ -684,8 +726,8 @@ deleted material, e.g., by typing `I$}'.
 ! Extra }, or forgotten $.
 \algocf@Vsline ...vance \hsize by -\skiplength #1}
                                                   }}\algocf@pop {\skiprule }
-l.74 }
-      
+l.100 }
+       
 I've deleted a group-closing symbol because it seems to be
 spurious, as in `$x}$'. But perhaps the } is legitimate and
 you forgot something else, as in `\hbox{$x}'. In such cases
@@ -695,8 +737,8 @@ deleted material, e.g., by typing `I$}'.
 ! Extra }, or forgotten $.
 \algocf@Vsline ...ance \hsize by -\skiplength #1}}
                                                   }\algocf@pop {\skiprule }
-l.74 }
-      
+l.100 }
+       
 I've deleted a group-closing symbol because it seems to be
 spurious, as in `$x}$'. But perhaps the } is legitimate and
 you forgot something else, as in `\hbox{$x}'. In such cases
@@ -706,8 +748,8 @@ deleted material, e.g., by typing `I$}'.
 ! Extra }, or forgotten $.
 \algocf@Vsline ...nce \hsize by -\skiplength #1}}}
                                                   \algocf@pop {\skiprule }
-l.74 }
-      
+l.100 }
+       
 I've deleted a group-closing symbol because it seems to be
 spurious, as in `$x}$'. But perhaps the } is legitimate and
 you forgot something else, as in `\hbox{$x}'. In such cases
@@ -717,72 +759,72 @@ deleted material, e.g., by typing `I$}'.
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.93 }
-      
+l.119 }
+       
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
 
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.93 }
-      
+l.119 }
+       
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
 
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.93 }
-      
+l.119 }
+       
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
 
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.93 }
-      
+l.119 }
+       
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
 
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.93 }
-      
+l.119 }
+       
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
 
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.93 }
-      
+l.119 }
+       
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
 
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.93 }
-      
+l.119 }
+       
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
 
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.93 }
-      
+l.119 }
+       
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
 
 ! Extra }, or forgotten $.
 \algocf@Vsline ...vance \hsize by -\skiplength #1}
                                                   }}\algocf@pop {\skiprule }
-l.93 }
-      
+l.119 }
+       
 I've deleted a group-closing symbol because it seems to be
 spurious, as in `$x}$'. But perhaps the } is legitimate and
 you forgot something else, as in `\hbox{$x}'. In such cases
@@ -792,8 +834,8 @@ deleted material, e.g., by typing `I$}'.
 ! Extra }, or forgotten $.
 \algocf@Vsline ...ance \hsize by -\skiplength #1}}
                                                   }\algocf@pop {\skiprule }
-l.93 }
-      
+l.119 }
+       
 I've deleted a group-closing symbol because it seems to be
 spurious, as in `$x}$'. But perhaps the } is legitimate and
 you forgot something else, as in `\hbox{$x}'. In such cases
@@ -803,8 +845,8 @@ deleted material, e.g., by typing `I$}'.
 ! Extra }, or forgotten $.
 \algocf@Vsline ...nce \hsize by -\skiplength #1}}}
                                                   \algocf@pop {\skiprule }
-l.93 }
-      
+l.119 }
+       
 I've deleted a group-closing symbol because it seems to be
 spurious, as in `$x}$'. But perhaps the } is legitimate and
 you forgot something else, as in `\hbox{$x}'. In such cases
@@ -814,24 +856,46 @@ deleted material, e.g., by typing `I$}'.
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.93 }
-      
+l.119 }
+       
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
 
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.93 }
-      
+l.119 }
+       
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
 
 ! Extra }, or forgotten $.
-\algocf@Vline ...dvance \hsize by -\skiplength #1}
-                                                  \Hlne }}\vskip \skiphlne \...
-l.93 }
-      
+\algocf@Vsline ...vance \hsize by -\skiplength #1}
+                                                  }}\algocf@pop {\skiprule }
+l.119 }
+       
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+! Extra }, or forgotten $.
+\algocf@Vsline ...ance \hsize by -\skiplength #1}}
+                                                  }\algocf@pop {\skiprule }
+l.119 }
+       
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+! Extra }, or forgotten $.
+\algocf@Vsline ...nce \hsize by -\skiplength #1}}}
+                                                  \algocf@pop {\skiprule }
+l.119 }
+       
 I've deleted a group-closing symbol because it seems to be
 spurious, as in `$x}$'. But perhaps the } is legitimate and
 you forgot something else, as in `\hbox{$x}'. In such cases
@@ -841,35 +905,46 @@ deleted material, e.g., by typing `I$}'.
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.93 }
-      
+l.119 }
+       
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
-
-! Missing } inserted.
-<inserted text> 
-                }
-l.93 }
-      
-I've inserted something that you may have forgotten.
-(See the <inserted text> above.)
-With luck, this will get me unwedged. But if you
-really didn't forget anything, try typing `2' now; then
-my insertion and my current dilemma will both disappear.
 
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.93 }
-      
+l.119 }
+       
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
 
 ! Extra }, or forgotten $.
-\algocf@Vline ...dvance \hsize by -\skiplength #1}
-                                                  \Hlne }}\vskip \skiphlne \...
-l.93 }
-      
+\algocf@Vsline ...vance \hsize by -\skiplength #1}
+                                                  }}\algocf@pop {\skiprule }
+l.119 }
+       
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+! Extra }, or forgotten $.
+\algocf@Vsline ...ance \hsize by -\skiplength #1}}
+                                                  }\algocf@pop {\skiprule }
+l.119 }
+       
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+! Extra }, or forgotten $.
+\algocf@Vsline ...nce \hsize by -\skiplength #1}}}
+                                                  \algocf@pop {\skiprule }
+l.119 }
+       
 I've deleted a group-closing symbol because it seems to be
 spurious, as in `$x}$'. But perhaps the } is legitimate and
 you forgot something else, as in `\hbox{$x}'. In such cases
@@ -879,49 +954,41 @@ deleted material, e.g., by typing `I$}'.
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.93 }
-      
+l.119 }
+       
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
 
-! Missing } inserted.
-<inserted text> 
-                }
-l.93 }
-      
-I've inserted something that you may have forgotten.
-(See the <inserted text> above.)
-With luck, this will get me unwedged. But if you
-really didn't forget anything, try typing `2' now; then
-my insertion and my current dilemma will both disappear.
+
+! LaTeX Error: \caption outside float.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.120 \caption
+              {$RDebug(T)$
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+! LaTeX Error: \begin{minipage} on input line 57 ended by \end{algorithm2e}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.122 \end{algorithm2e}
+                       
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
 
 ! Missing } inserted.
 <inserted text> 
                 }
-l.96 \end{algorithm2e}
-                      
-I've inserted something that you may have forgotten.
-(See the <inserted text> above.)
-With luck, this will get me unwedged. But if you
-really didn't forget anything, try typing `2' now; then
-my insertion and my current dilemma will both disappear.
-
-! Missing } inserted.
-<inserted text> 
-                }
-l.96 \end{algorithm2e}
-                      
-I've inserted something that you may have forgotten.
-(See the <inserted text> above.)
-With luck, this will get me unwedged. But if you
-really didn't forget anything, try typing `2' now; then
-my insertion and my current dilemma will both disappear.
-
-! Missing } inserted.
-<inserted text> 
-                }
-l.96 \end{algorithm2e}
-                      
+l.122 \end{algorithm2e}
+                       
 I've inserted something that you may have forgotten.
 (See the <inserted text> above.)
 With luck, this will get me unwedged. But if you
@@ -931,31 +998,8 @@ my insertion and my current dilemma will both disappear.
 ! Missing } inserted.
 <inserted text> 
                 }
-l.96 \end{algorithm2e}
-                      
-I've inserted something that you may have forgotten.
-(See the <inserted text> above.)
-With luck, this will get me unwedged. But if you
-really didn't forget anything, try typing `2' now; then
-my insertion and my current dilemma will both disappear.
-
-! Missing $ inserted.
-<inserted text> 
-                $
-l.96 \end{algorithm2e}
-                      
-I've inserted something that you may have forgotten.
-(See the <inserted text> above.)
-With luck, this will get me unwedged. But if you
-really didn't forget anything, try typing `2' now; then
-my insertion and my current dilemma will both disappear.
-
-Missing character: There is no è in font cmex10!
-! Missing } inserted.
-<inserted text> 
-                }
-l.96 \end{algorithm2e}
-                      
+l.122 \end{algorithm2e}
+                       
 I've inserted something that you may have forgotten.
 (See the <inserted text> above.)
 With luck, this will get me unwedged. But if you
@@ -965,8 +1009,184 @@ my insertion and my current dilemma will both disappear.
 ! Missing } inserted.
 <inserted text> 
                 }
-l.96 \end{algorithm2e}
-                      
+l.122 \end{algorithm2e}
+                       
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+! Missing } inserted.
+<inserted text> 
+                }
+l.122 \end{algorithm2e}
+                       
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+! Missing } inserted.
+<inserted text> 
+                }
+l.122 \end{algorithm2e}
+                       
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+! Missing } inserted.
+<inserted text> 
+                }
+l.122 \end{algorithm2e}
+                       
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+! Missing } inserted.
+<inserted text> 
+                }
+l.122 \end{algorithm2e}
+                       
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+! Missing } inserted.
+<inserted text> 
+                }
+l.122 \end{algorithm2e}
+                       
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+! Missing } inserted.
+<inserted text> 
+                }
+l.122 \end{algorithm2e}
+                       
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+! Missing } inserted.
+<inserted text> 
+                }
+l.122 \end{algorithm2e}
+                       
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+! Missing } inserted.
+<inserted text> 
+                }
+l.122 \end{algorithm2e}
+                       
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+! Missing } inserted.
+<inserted text> 
+                }
+l.122 \end{algorithm2e}
+                       
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+! Missing } inserted.
+<inserted text> 
+                }
+l.122 \end{algorithm2e}
+                       
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+! Missing } inserted.
+<inserted text> 
+                }
+l.122 \end{algorithm2e}
+                       
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+! Missing } inserted.
+<inserted text> 
+                }
+l.122 \end{algorithm2e}
+                       
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+! Missing } inserted.
+<inserted text> 
+                }
+l.122 \end{algorithm2e}
+                       
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+! Missing } inserted.
+<inserted text> 
+                }
+l.122 \end{algorithm2e}
+                       
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+! Missing } inserted.
+<inserted text> 
+                }
+l.122 \end{algorithm2e}
+                       
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+! Missing } inserted.
+<inserted text> 
+                }
+l.122 \end{algorithm2e}
+                       
 I've inserted something that you may have forgotten.
 (See the <inserted text> above.)
 With luck, this will get me unwedged. But if you
@@ -974,37 +1194,9 @@ really didn't forget anything, try typing `2' now; then
 my insertion and my current dilemma will both disappear.
 
 
-Overfull \hbox (2745.15366pt too wide) detected at line 96
-[][]  \T1/ptm/m/n/12 verify the consistency of $\OML/cmm/m/it/12 T$ \T1/ptm/m/n
-/12 in others replicas$ \OML/cmm/m/it/12 InvokestepS\OT1/cmr/m/n/12 2[\OML/cmm/
-m/it/12 Aggregation\OT1/cmr/m/n/12 ] $\T1/ptm/m/n/12 S2 [Aggregation] $\OML/cmm
-/m/it/12 information \OMS/cmsy/m/n/12 ($ \T1/ptm/m/n/12 the child's information
- stored on shared memory by replicas of $\OML/cmm/m/it/12 T$$ $\T1/ptm/m/n/12 r
-eplica_consistency $\OMS/cmsy/m/n/12 ($ \T1/ptm/m/n/12 verify the consistency o
-f $\OML/cmm/m/it/12 T$ \T1/ptm/m/n/12 in others replicas$ $node_consistency $\O
-MS/cmsy/m/n/12 ($ \T1/ptm/m/n/12 verify the consistency of $\OML/cmm/m/it/12 M$
- \T1/ptm/m/n/12 and $\OML/cmm/m/it/12 m$ \T1/ptm/m/n/12 values of $\OML/cmm/m/i
-t/12 T$$ $\T1/ptm/m/n/12 overlap $\OMS/cmsy/m/n/12 ($ \T1/ptm/m/n/12 overlap ar
-ea of $\OML/cmm/m/it/12 T$$ $\T1/ptm/m/n/12 dead_area $\OMS/cmsy/m/n/12 ($ \T1/
-ptm/m/n/12 dead area of $\OML/cmm/m/it/12 T$$ $\T1/ptm/m/n/12 bound $\OMS/cmsy/
-m/n/12 ($ \T1/ptm/m/n/12 MBR of $\OML/cmm/m/it/12 T$$ addin$\T1/ptm/m/n/12 info
-rmation$\OT1/cmr/m/n/12 :$\T1/ptm/m/n/12 replica_consistency$\OML/cmm/m/it/12 ;
-$\T1/ptm/m/n/12 node_consistency$\OML/cmm/m/it/12 ;$\T1/ptm/m/n/12 overlap$\OML
-/cmm/m/it/12 ;$\T1/ptm/m/n/12 dead_area$\OML/cmm/m/it/12 ;$\T1/ptm/m/n/12 bound
-$ $\T1/ptm/b/n/12 if $\OML/cmm/m/it/12 T$ \T1/ptm/m/it/12 is leaf \T1/ptm/b/n/1
-2 then|\T1/ptm/m/n/12 -$[]$
+Overfull \hbox (6.27493pt too wide) in paragraph at lines 57--124
+ []$ 
  []
-
-! Missing } inserted.
-<inserted text> 
-                }
-l.96 \end{algorithm2e}
-                      
-I've inserted something that you may have forgotten.
-(See the <inserted text> above.)
-With luck, this will get me unwedged. But if you
-really didn't forget anything, try typing `2' now; then
-my insertion and my current dilemma will both disappear.
 
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
@@ -1013,49 +1205,49 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 <rdebug-vis.jpg, id=38, 501.875pt x 501.875pt>
 File: rdebug-vis.jpg Graphic file (type jpg)
  <use rdebug-vis.jpg>
-Package pdftex.def Info: rdebug-vis.jpg used on input line 105.
+Package pdftex.def Info: rdebug-vis.jpg used on input line 138.
 (pdftex.def)             Requested size: 213.39568pt x 213.39743pt.
 )
-(./basicTechniques.tex [7 <./rdebug-vis.jpg>]
-Underfull \hbox (badness 2460) in paragraph at lines 13--14
+(./basicTechniques.tex
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [7]
+Underfull \hbox (badness 2460) in paragraph at lines 17--20
 []\T1/ptm/m/n/12 Several breakpoint-based de-bug-gers have been de-signed for p
 ar-al-lel pro-
  []
 
 
-Underfull \hbox (badness 1077) in paragraph at lines 15--16
+Underfull \hbox (badness 1077) in paragraph at lines 21--23
 []\T1/ptm/m/n/12 An in-ter-est-ing al-ter-na-tive to tra-di-tional break-points
  is mes-sage break-points
  []
 
-[8]) (./conclusion.tex [9]) (./distributedDebugging.bbl [10] [11]) [12]
-(./distributedDebugging.aux)
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
- ) 
+[8 <./rdebug-vis.jpg>] [9]) (./conclusion.tex) (./distributedDebugging.bbl
+[10] [11]) [12] (./distributedDebugging.aux) ) 
 Here is how much of TeX's memory you used:
- 5379 strings out of 493485
- 74763 string characters out of 3143526
- 158733 words of memory out of 3000000
- 8581 multiletter control sequences out of 15000+200000
+ 5381 strings out of 493485
+ 74787 string characters out of 3143526
+ 160716 words of memory out of 3000000
+ 8583 multiletter control sequences out of 15000+200000
  39523 words of font info for 48 fonts, out of 3000000 for 9000
  957 hyphenation exceptions out of 8191
- 38i,24n,32p,898b,490s stack positions out of 5000i,500n,10000p,200000b,50000s
-{/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texliv
-e/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texlive/texm
-f-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/
-fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/ty
-pe1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/ur
-w/courier/ucrr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uh
-vb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/
-share/texlive/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb></usr/share/texlive/
-texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/font
-s/type1/urw/times/utmri8a.pfb>
-Output written on distributedDebugging.pdf (12 pages, 505594 bytes).
+ 38i,25n,32p,318b,588s stack positions out of 5000i,500n,10000p,200000b,50000s
+{/usr/share/texlive/texmf-dist/fo
+nts/enc/dvips/base/8r.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/ams
+fonts/cm/cmmi12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/
+cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8
+.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><
+/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/sh
+are/texlive/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/share/texlive/t
+exmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/share/texlive/texmf-dist/fo
+nts/type1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/t
+imes/utmbi8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pf
+b></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
+Output written on distributedDebugging.pdf (12 pages, 514766 bytes).
 PDF statistics:
- 92 PDF objects out of 1000 (max. 8388607)
- 60 compressed objects within 1 object stream
+ 96 PDF objects out of 1000 (max. 8388607)
+ 63 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  26 words of extra memory for PDF output out of 10000 (max. 10000000)
 
