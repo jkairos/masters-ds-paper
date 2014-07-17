@@ -52,6 +52,11 @@ Those information are used in the platform to find out indexing issues and to op
 E.g: The Window Query algorithm shown on Section \ref{sub:spatialdata}. To tweak RDebug to Window Query, it is only needed add an window query in the first step and gather the aggregation information of the accessed nodes. 
 Whereas, the algorithms that access diverse R-Trees, such as Spatial Join, need a deep change, as the algorithms can go through different paths.
 
+The algorithm RDebug was evaluated using a dataset containing 120 locations of seaport of the Brasil. 
+This dataset was inserted on DistGeo and the algorithm RDebug was runned after the end of the insertion. 
+This validation process will be improved in future works with the addition of bigger datasets and datasets with differents kinds of geometries (lines, points, geometries).
+However, the algorithm has a great contribution with the ideas about debugging informations collect.
+
 \medskip
 \begin{center}
 \begin{minipage}{1\textwidth}
@@ -122,11 +127,6 @@ store $information$ on shared memory\;
 \end{algorithm2e}
 \end{minipage}
 \end{center}
-
-The algorithm RDebug was evaluated using a dataset containing 120 locations of seaport of the Brasil. 
-This dataset was inserted on DistGeo and the algorithm RDebug was runned after the end of the insertion. 
-This validation process will be improved in future works with the addition of bigger datasets and datasets with differents kinds of geometries (lines, points, geometries).
-However, the algorithm has a great contribution with the ideas about debugging informations collect.
 
 The algorithm RDebug have collected debugging informations about the R-Tree index built during the insertion of the dataset.
 Figure \ref{fig:rdebug-vis} shows a graphical tool (RDebug Visualizer) created in this work to visualize this debugging informations collected.
