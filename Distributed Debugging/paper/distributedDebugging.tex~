@@ -4,10 +4,11 @@
 
 \usepackage{graphicx,url}
 \usepackage{listings}
+\usepackage{subfigure}
 
-\usepackage[brazil]{babel}   
-\usepackage[latin1]{inputenc}  
-\RequirePackage[vlined,titlenumbered,algo2e,ruled,portuguese]{algorithm2e} 
+\RequirePackage[vlined,titlenumbered,algo2e,ruled]{algorithm2e} 
+
+\usepackage[T1]{fontenc}
      
 \sloppy
 
@@ -26,29 +27,24 @@
 \maketitle
 
 \begin{abstract}
-  R-Trees arrived on the scene in 1984 by Antonin Guttman, as a mechanism of handling spatial data efficiently, building an index structure that helps retrieve data items quickly according to their spatial locations. The R-tree has found significant use in both theoretical and applied contexts. However, it brings a big challenge in terms of debugging.
-  In this paper, we argue that distributed debugging is a non-trivial task and few efforts have been developed for distributed debugging of spatial objects based on R-Tress. We use examples of this issue and briefly discuss basic debugging techniques, then we propose a technique for debugging a distributed R-Tree.       
+  The growing availability of data and the number of users has motivated the emergence of distributed algorithms to process spatial operations. 
+  This distributed algorithms are implemented in distributed indexes to distributed the algorithm processing. 
+  In the liteturature, the R-Tree is the spatial distributed index more used to index and retrieve the spatial objects. 
+  However, the building of the distributed index R-Tree has a challenge: How to debug the distributed index R-Tree?
+  In the literature, no proposal has been found to perform the debug of the distributed index R-Tree.
+  So, this work presents a new algorithm for debugging the distributed R-Tree called RDebug. 
+  This algorithm was implemented on spatial plataform DistGeo and a graphic tool was implemented to visualize the output of the debugging.
 \end{abstract}
 
 \input{introduction}
 
-\include{spatialProcessingDistributedAlgorithms}
+\input{spatialProcessingDistributedAlgorithms}
 
-\include{techniqueForDebuggingDistributedRTree}
+\input{techniqueForDebuggingDistributedRTree}
 
 \input{basicTechniques}
 
-\include{conclusion}
-
-\section{References}
-
-Bibliographic references must be unambiguous and uniform.  We recommend giving
-the author names references in brackets, e.g. \cite{knuth:84},
-\cite{boulic:91}, and \cite{smith:99}.
-
-The references must be listed using 12 point font size, with 6 points of space
-before each reference. The first line of each reference should not be
-indented, while the subsequent should be indented by 0.5 cm.
+\input{conclusion}
 
 \bibliographystyle{sbc}
 \bibliography{sbc-template}

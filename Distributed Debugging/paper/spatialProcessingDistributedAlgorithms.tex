@@ -46,7 +46,7 @@ Less overlapping reduces the amount of sub-trees accessed during r-tree traversa
 
 \subsection{DistGeo: A Platform of Distributed Spatial Operations for Geoprocessing}
 
-This work developed a platform, namely DistGeo, to process the spatial operations in a cluster of computers. 
+This work developed a platform, namely DistGeo (Figure \ref{fig:dist}), to process the spatial operations in a cluster of computers. 
 DistGeo is based on the shared-nothing architecture, which the nodes do not share CPU, hard disk and memory and the communication relies on message exchange. 
 Figure \ref{fig: Figure 3} depicts DistGeo plataform based on peer-to-peer model, with the data manage by the cluster presented as a ring topology. 
 It is divided in ranges of keys, which are managed for each node of the cluster. To a node join the ring it must first receive a range.
@@ -54,11 +54,20 @@ It is divided in ranges of keys, which are managed for each node of the cluster.
 The range of keys are known by each node in the cluster. For instance, in a ring representation, whose key set start with 0 till 100, if we have 4 nodes in the cluster, the division could be done as shown below: 
 a) 0-25, b) 25-50, c) 50-75 e d) 75-100. If we want to search for one object with key 34, we certainly should look on the node 2.
 
-\begin{figure}[ht]
-\centering
-\includegraphics[width=.45\textwidth]{figure3.png}
-\caption{DistGeo Platform}
-\label{fig: Figure 3}
+\begin{figure}[h]
+  \centering
+  \subfigure[DistGeo Architecture]
+  {
+  \includegraphics[width=0.45\textwidth]{figure3.png}
+  \label{fig: Figure 3}
+  } \qquad
+  \subfigure[R-Tree Partitioning in DistGeo]
+  {
+  \includegraphics[width=0.45\textwidth]{r-tree-partiotioning.png}
+  \label{fig:partitioning}
+  }
+  \caption{DistGeo Platform}
+  \label{fig:dist}
 \end{figure}
 	
 Every replica of an object is equally important, in other words, there is not a master replica. Read/Write operations may be performed in any node of the cluster. 
@@ -69,13 +78,6 @@ In the Gossip protocol every second a message is exchanged among three nodes in 
 
 Figure \ref{fig:partitioning} illustrates the structure of a Distributed R-Tree in a cluster. The partitioning it is performed grouping the nodes in cluster and creating the indexes according to the R-Tree structure. 
 The lines in Figure \ref{fig:partitioning} show the need for message exchange to reach the sub-trees during the algorithm processing. 
-
-\begin{figure}[ht]
-\centering
-\includegraphics[width=.5\textwidth]{r-tree-partiotioning.png}
-\caption{R-Tree Partitioning in DistGeo}
-\label{fig:partitioning}
-\end{figure}
 
 Insertions and searching in a distributed R-Tree are similar to the non-distributed version, except for: i) The need of message exchange to access the distributed partitions and
 ii) Concurrency control and consistency due to the parallel processing in the cluster. Both were implemented in DistGeo.

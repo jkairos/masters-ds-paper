@@ -21,4 +21,3 @@ Ongoing work includes modify the RDebug algorithm to debug the Window Query and 
 The RDebug algorithm is easily adapted to gather debugging information for Window Query. 
 Whereas, for Join Query algorithm, RDebug must be changed considerably, since the traversal is processed in two different distributed R-Trees. 
 Another ongoing work is simulate node replica inconsistencies to evaluate the ability of the Rdebug to identify this inconsistencies.
-On future works, the algorithm RDebug performance will be evaluated with respect to scalability. 

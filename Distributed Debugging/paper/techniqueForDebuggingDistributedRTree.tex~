@@ -126,18 +126,17 @@ Those information are used in the platform to find out indexing issues and to op
 E.g: The Window Query algorithm shown on Section \ref{sub:spatialdata}. To tweak RDebug to Window Query, it is only needed add an window query in the first step and gather the aggregation information of the accessed nodes. 
 Whereas, the algorithms that access diverse R-Trees, such as Spatial Join, need a deep change, as the algorithms can go through different paths.
 
+The algorithm RDebug have collected debugging informations about the R-Tree index built during the insertion of the dataset.
+Figure \ref{fig:rdebug-vis} shows a graphical tool (RDebug Visualizer) created in this work to visualize this debugging informations collected.
+The RDebug Visualizer allows the structure of the distributed R-Tree index and analyse the debug information in each node of the R-Tree. 
+The output of the RDebug algorithm shows which nodes are currently inconsistent, so the user can access the path of the node and visualize the node's inconsistent information.    
+
 \begin{figure}[ht]
   \centering
   \includegraphics[width=0.5\textwidth]{rdebug-vis.jpg}
   \caption{RDebug Visualizer}
   \label{fig:rdebug-vis}
 \end{figure}
-
-The algorithm RDebug have collected debugging informations about the R-Tree index built during the insertion of the dataset.
-Figure \ref{fig:rdebug-vis} shows a graphical tool (RDebug Visualizer) created in this work to visualize this debugging informations collected.
-The RDebug Visualizer allows the structure of the distributed R-Tree index and analyse the debug information in each node of the R-Tree. 
-The output of the RDebug algorithm shows which nodes are currently inconsistent, so the user can access the path of the node and visualize the node's inconsistent information.    
-
 
 \subsection{Evaluation of RDebug}
 \label{sub:rdebug_evaluation}	

@@ -1,3 +1,46 @@
-This is BibTeX, Version 0.99dThe top-level auxiliary file: distributedDebugging.aux
+This is BibTeX, Version 0.99d (TeX Live 2012/Debian)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: distributedDebugging.aux
 The style file: sbc.bst
 Database file #1: sbc-template.bib
+You've used 26 entries,
+            1935 wiz_defined-function locations,
+            625 strings with 8165 characters,
+and the built_in function-call counts, 11817 in all, are:
+= -- 1181
+> -- 458
+< -- 29
++ -- 160
+- -- 156
+* -- 891
+:= -- 1932
+add.period$ -- 90
+call.type$ -- 26
+change.case$ -- 206
+chr.to.int$ -- 26
+cite$ -- 26
+duplicate$ -- 534
+empty$ -- 843
+format.name$ -- 188
+if$ -- 2468
+int.to.chr$ -- 1
+int.to.str$ -- 0
+missing$ -- 28
+newline$ -- 133
+num.names$ -- 78
+pop$ -- 233
+preamble$ -- 1
+purify$ -- 208
+quote$ -- 0
+skip$ -- 419
+stack$ -- 0
+substring$ -- 748
+swap$ -- 150
+text.length$ -- 16
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 152
+warning$ -- 0
+while$ -- 89
+width$ -- 0
+write$ -- 347

@@ -3,7 +3,7 @@ def_graphic_ext=pdf
 img_extIsRegExp=false
 img_extensions=.eps .jpg .jpeg .png .pdf .ps .fig .gif
 kileprversion=2
-kileversion=2.1.3
+kileversion=2.1.0
 lastDocument=distributedDebugging.tex
 masterDocument=
 name=master
@@ -16,6 +16,26 @@ src_extensions=.tex .ltx .latex .dtx .ins
 MakeIndex=
 QuickBuild=
 
+[document-settings,item:basicTechniques.tex]
+Bookmarks=
+Encoding=UTF-8
+FoldedColumns=
+FoldedLines=
+Highlighting=LaTeX
+Indentation Mode=normal
+Mode=LaTeX
+ReadWrite=true
+
+[document-settings,item:conclusion.tex]
+Bookmarks=
+Encoding=UTF-8
+FoldedColumns=
+FoldedLines=
+Highlighting=LaTeX
+Indentation Mode=normal
+Mode=LaTeX
+ReadWrite=true
+
 [document-settings,item:distributedDebugging.tex]
 Bookmarks=
 Encoding=ISO-8859-15
@@ -24,6 +44,17 @@ FoldedLines=
 Highlighting=LaTeX
 Indentation Mode=normal
 Mode=LaTeX
+ReadWrite=true
+
+[document-settings,item:introduction.tex]
+Bookmarks=
+Encoding=UTF-8
+FoldedColumns=
+FoldedLines=
+Highlighting=LaTeX
+Indentation Mode=normal
+Mode=LaTeX
+ReadWrite=true
 
 [document-settings,item:sbc-template.tex]
 Bookmarks=
@@ -33,6 +64,26 @@ FoldedLines=
 Highlighting=LaTeX
 Indentation Mode=normal
 Mode=LaTeX
+
+[document-settings,item:spatialProcessingDistributedAlgorithms.tex]
+Bookmarks=
+Encoding=UTF-8
+FoldedColumns=
+FoldedLines=
+Highlighting=LaTeX
+Indentation Mode=normal
+Mode=LaTeX
+ReadWrite=true
+
+[document-settings,item:techniqueForDebuggingDistributedRTree.tex]
+Bookmarks=
+Encoding=UTF-8
+FoldedColumns=
+FoldedLines=
+Highlighting=LaTeX
+Indentation Mode=normal
+Mode=LaTeX
+ReadWrite=true
 
 [item:basicTechniques.aux]
 archive=true
@@ -57,12 +108,12 @@ order=-1
 [item:basicTechniques.tex]
 archive=true
 column=0
-encoding=
-highlight=
+encoding=UTF-8
+highlight=LaTeX
 line=0
-mode=
-open=false
-order=-1
+mode=LaTeX
+open=true
+order=1
 
 [item:caption2.sty]
 archive=true
@@ -86,13 +137,13 @@ order=-1
 
 [item:conclusion.tex]
 archive=true
-column=0
-encoding=
-highlight=
-line=0
-mode=
-open=false
-order=-1
+column=49
+encoding=UTF-8
+highlight=LaTeX
+line=23
+mode=LaTeX
+open=true
+order=2
 
 [item:distributedDebugging.aux]
 archive=true
@@ -156,10 +207,10 @@ order=-1
 
 [item:distributedDebugging.tex]
 archive=true
-column=5
+column=94
 encoding=ISO-8859-15
 highlight=LaTeX
-line=11
+line=36
 mode=LaTeX
 open=true
 order=0
@@ -227,12 +278,12 @@ order=-1
 [item:introduction.tex]
 archive=true
 column=0
-encoding=
-highlight=
+encoding=UTF-8
+highlight=LaTeX
 line=0
-mode=
+mode=LaTeX
 open=false
-order=-1
+order=3
 
 [item:master.kilepr]
 archive=true
@@ -416,13 +467,13 @@ order=-1
 
 [item:spatialProcessingDistributedAlgorithms.tex]
 archive=true
-column=0
-encoding=
-highlight=
-line=0
-mode=
-open=false
-order=-1
+column=70
+encoding=UTF-8
+highlight=LaTeX
+line=48
+mode=LaTeX
+open=true
+order=3
 
 [item:table.jpg]
 archive=true
@@ -457,21 +508,51 @@ order=-1
 [item:techniqueForDebuggingDistributedRTree.tex]
 archive=true
 column=0
-encoding=
-highlight=
-line=0
-mode=
-open=false
-order=-1
+encoding=UTF-8
+highlight=LaTeX
+line=134
+mode=LaTeX
+open=true
+order=4
+
+[view-settings,view=0,item:basicTechniques.tex]
+CursorColumn=0
+CursorLine=0
+JumpList=
+ViMarks=
+
+[view-settings,view=0,item:conclusion.tex]
+CursorColumn=49
+CursorLine=23
+JumpList=
+ViMarks=
 
 [view-settings,view=0,item:distributedDebugging.tex]
-CursorColumn=5
-CursorLine=11
+CursorColumn=94
+CursorLine=36
+JumpList=
+ViMarks=
+
+[view-settings,view=0,item:introduction.tex]
+CursorColumn=0
+CursorLine=0
 JumpList=
 ViMarks=
 
 [view-settings,view=0,item:sbc-template.tex]
 CursorColumn=18
 CursorLine=7
+JumpList=
+ViMarks=
+
+[view-settings,view=0,item:spatialProcessingDistributedAlgorithms.tex]
+CursorColumn=70
+CursorLine=48
+JumpList=
+ViMarks=
+
+[view-settings,view=0,item:techniqueForDebuggingDistributedRTree.tex]
+CursorColumn=0
+CursorLine=134
 JumpList=
 ViMarks=
