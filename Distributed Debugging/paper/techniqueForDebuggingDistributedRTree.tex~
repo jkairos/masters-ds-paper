@@ -126,11 +126,6 @@ Those information are used in the platform to find out indexing issues and to op
 E.g: The Window Query algorithm shown on Section \ref{sub:spatialdata}. To tweak RDebug to Window Query, it is only needed add an window query in the first step and gather the aggregation information of the accessed nodes. 
 Whereas, the algorithms that access diverse R-Trees, such as Spatial Join, need a deep change, as the algorithms can go through different paths.
 
-The algorithm RDebug have collected debugging informations about the R-Tree index built during the insertion of the dataset.
-Figure \ref{fig:rdebug-vis} shows a graphical tool (RDebug Visualizer) created in this work to visualize this debugging informations collected.
-The RDebug Visualizer allows the structure of the distributed R-Tree index and analyse the debug information in each node of the R-Tree. 
-The output of the RDebug algorithm shows which nodes are currently inconsistent, so the user can access the path of the node and visualize the node's inconsistent information.    
-
 \begin{figure}[ht]
   \centering
   \includegraphics[width=0.5\textwidth]{rdebug-vis.jpg}
@@ -138,40 +133,7 @@ The output of the RDebug algorithm shows which nodes are currently inconsistent,
   \label{fig:rdebug-vis}
 \end{figure}
 
-\subsection{Evaluation of RDebug}
-\label{sub:rdebug_evaluation}	
-
-The RDebug algorithm have been evaluated on 3500 MHz Intel(R) Core(TM) i7-2600 CPU workstations
-connected by 1 GBit/sec switched Ethernet running Ubuntu 14.04. Each node has 16 GB of main memory.
-The experiment results were achieved with 1, 4 and 8 servers on DistGeo platform.
-
-The experiments used three data sets with different characteristics from LAPIG\footnote{Image Processing and Geoprocessing Lab}.
-Table \ref{table1} presents the statistics of the data sets. The first contains 1000000 points of business locations in Brazil. 
-The second data set comprises 51645 lines representing the roads in Brazil. The third contains 32578 polygons of the deforestation in Brazilian Savanna.    
-
-\begin{table}[ht]
-\small
-\caption{Data sets description}
-\label{table1}
-\centering{
-\begin{tabular}{|c|c|c|c|}
-\hline
-\textbf{Data set} & \textbf{Geometry} & \textbf{Number of objects} & \textbf{Size}\\
-\hline
-Deforestation in Brazilian Savanna  & Polygon & 32578 & 11,2\\
-\hline
-Roads & Line & 51645 & 15,2\\
-\hline
-Business & Point & 1000000 & 270,6\\
-\hline
-\end{tabular}}
-\end{table}
-
-The RDebug was validate on DistGeo platform after the insertion and indexing of each data set described on Table \ref{table1}. 
-The algorithm was able to collect information from the R-Tree index, such as dead area and overlap.
-Furthermore, the RDebug algorithm has succeeded to collect the index structure allowing visualize each data set R-Tree index on RDebug Visualizer tool.
-
-Three inconsistencies were inserted on purpose in the index to evaluate the RDebug: 
-i) bound inconsistencies between parent and child nodes, ii) nodes filled with more than M entries and iii) duplication of a node on R-Tree. 
-The RDebug algorithm was able to identify this inconsistencies on distributed R-Tree. 
-In future works, node replica consistencies between servers will be simulated to evaluate the RDebug algorithm.
+The algorithm RDebug have collected debugging informations about the R-Tree index built during the insertion of the dataset.
+Figure \ref{fig:rdebug-vis} shows a graphical tool (RDebug Visualizer) created in this work to visualize this debugging informations collected.
+The RDebug Visualizer allows the structure of the distributed R-Tree index and analyse the debug information in each node of the R-Tree. 
+The output of the RDebug algorithm shows which nodes are currently inconsistent, so the user can access the path of the node and visualize the node's inconsistent information.    

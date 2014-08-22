@@ -39,22 +39,6 @@ The information of the children nodes are stored in a shared memory, with concur
 Line 14 verifies the consistency of $T$ in the servers that store any replica of $T$. Line 15 verifies the consistency of $M$ and $m$ values. 
 Lines 16 and 17 calculate the overlap and the dead space area for each node of the R-tree, respectively. Those information help the insertion algorithm designer analyze the quality of the built index. 
 Line 18 get the MBR of the $T$. This data are inserted in $information$ on line 18. This information will be used as an input to a tool capable of visualizing the index of the R-Tree.
-	
-If the aggregation step is being executed in the leaves (lines 20 - 24), then if  $T$ is the root node (line 22), the node information are sent to the client application. 
-If $T$ is not the root node, in line 24, the information are sent to the parent node of $T$. If the aggregation step is in an internal node (lines 26 - 39), the algorithm aggregates the information of the children nodes. 
-In the line 29, the algorithm receives the information sent by the child node. Line 27, verifies if the MBR of the entry that points to the child node is indeed the same MBR sent by the child node.
-	
-Line 28 adds the data processed from lines 26 and 27 in $information$. Line 29 acquires the number of children nodes that not sent debugging information yet. 
-This value is stored in the variable $count$, which is decremented and the values is stored on shared memory to let the other replicas know.
-	
-If every node has sent the answer, the variable count then will hold the value 0 and lines 30-35 are processed. 
-If $T$ is the root node, then the information are sent to the client application, otherwise, those information are sent to the parent node of $T$. 
-If the variable $count$ is greater than 0, then the client information are stored in the shared memory to be used until every child node send replies.	
-	
-The algorithm \ref{alg:rdebug} was implemented in the DistGeo platform to collect the debugging information of the built distributed R-tree. 
-Those information are used in the platform to find out indexing issues and to optimize the R-tree index for searching. With the aid of RDebug \ref{alg:rdebug} algorithm, it is possible debug the searching algorithms of an R-Tree. 
-E.g: The Window Query algorithm shown on Section \ref{sub:spatialdata}. To tweak RDebug to Window Query, it is only needed add an window query in the first step and gather the aggregation information of the accessed nodes. 
-Whereas, the algorithms that access diverse R-Trees, such as Spatial Join, need a deep change, as the algorithms can go through different paths.
 
 \medskip
 \begin{center}
@@ -126,10 +110,21 @@ store $information$ on shared memory\;
 \end{minipage}
 \end{center}
 
-The algorithm RDebug have collected debugging informations about the R-Tree index built during the insertion of the dataset.
-Figure \ref{fig:rdebug-vis} shows a graphical tool (RDebug Visualizer) created in this work to visualize this debugging informations collected.
-The RDebug Visualizer allows the structure of the distributed R-Tree index and analyse the debug information in each node of the R-Tree. 
-The output of the RDebug algorithm shows which nodes are currently inconsistent, so the user can access the path of the node and visualize the node's inconsistent information.    
+If the aggregation step is being executed in the leaves (lines 20 - 24), then if  $T$ is the root node (line 22), the node information are sent to the client application. 
+If $T$ is not the root node, in line 24, the information are sent to the parent node of $T$. If the aggregation step is in an internal node (lines 26 - 39), the algorithm aggregates the information of the children nodes. 
+In the line 29, the algorithm receives the information sent by the child node. Line 27, verifies if the MBR of the entry that points to the child node is indeed the same MBR sent by the child node.
+	
+Line 28 adds the data processed from lines 26 and 27 in $information$. Line 29 acquires the number of children nodes that not sent debugging information yet. 
+This value is stored in the variable $count$, which is decremented and the values is stored on shared memory to let the other replicas know.
+	
+If every node has sent the answer, the variable count then will hold the value 0 and lines 30-35 are processed. 
+If $T$ is the root node, then the information are sent to the client application, otherwise, those information are sent to the parent node of $T$. 
+If the variable $count$ is greater than 0, then the client information are stored in the shared memory to be used until every child node send replies.	
+	
+The algorithm \ref{alg:rdebug} was implemented in the DistGeo platform to collect the debugging information of the built distributed R-tree. 
+Those information are used in the platform to find out indexing issues and to optimize the R-tree index for searching. With the aid of RDebug \ref{alg:rdebug} algorithm, it is possible debug the searching algorithms of an R-Tree. 
+E.g: The Window Query algorithm shown on Section \ref{sub:spatialdata}. To tweak RDebug to Window Query, it is only needed add an window query in the first step and gather the aggregation information of the accessed nodes. 
+Whereas, the algorithms that access diverse R-Trees, such as Spatial Join, need a deep change, as the algorithms can go through different paths.
 
 \begin{figure}[ht]
   \centering
@@ -138,32 +133,28 @@ The output of the RDebug algorithm shows which nodes are currently inconsistent,
   \label{fig:rdebug-vis}
 \end{figure}
 
+The algorithm RDebug have collected debugging informations about the R-Tree index built during the insertion of the dataset.
+Figure \ref{fig:rdebug-vis} shows a graphical tool (RDebug Visualizer) created in this work to visualize this debugging informations collected.
+The RDebug Visualizer allows the structure of the distributed R-Tree index and analyse the debug information in each node of the R-Tree. 
+The output of the RDebug algorithm shows which nodes are currently inconsistent, so the user can access the path of the node and visualize the node's inconsistent information.    
+
+
 \subsection{Evaluation of RDebug}
 \label{sub:rdebug_evaluation}	
 
 The RDebug algorithm have been evaluated on 3500 MHz Intel(R) Core(TM) i7-2600 CPU workstations
 connected by 1 GBit/sec switched Ethernet running Ubuntu 14.04. Each node has 16 GB of main memory.
-The experiment results were achieved with 1, 4 and 8 servers on DistGeo platform.
+The experiment results were achieved with 1, 2, 4 and 8 servers on DistGeo platform.
 
 The experiments used three data sets with different characteristics from LAPIG\footnote{Image Processing and Geoprocessing Lab}.
-Table \ref{table1} presents the statistics of the data sets. The first contains 1000000 points of business locations in Brazil. 
-The second data set comprises 51645 lines representing the roads in Brazil. The third contains 32578 polygons of the deforestation in Brazilian Savanna.    
+The first contains 21000000 points of business locations in the world. 
+The second data set comprises 6000000 streets  lines representing the roads in Brazil. The third contains 32578 polygons of the deforestation in Brazilian Savanna.    
 
-\begin{table}[ht]
-\small
-\caption{Data sets description}
-\label{table1}
-\centering{
-\begin{tabular}{|c|c|c|c|}
-\hline
-\textbf{Data set} & \textbf{Geometry} & \textbf{Number of objects} & \textbf{Size}\\
-\hline
-Deforestation in Brazilian Savanna  & Polygon & 32578 & 11,2\\
-\hline
-Roads & Line & 51645 & 15,2\\
-\hline
-Business & Point & 1000000 & 270,6\\
-\hline
-\end{tabular}}
-\end{table}
+The RDebug was validate on DistGeo platform after the insertion and indexing of each data set described on Table \ref{table1}. 
+The algorithm was able to collect information from the R-Tree index, such as dead area and overlap.
+Furthermore, the RDebug algorithm has succeeded to collect the index structure allowing visualize each data set R-Tree index on RDebug Visualizer tool.
 
+Three inconsistencies were inserted on purpose in the index to evaluate the RDebug: 
+i) bound inconsistencies between parent and child nodes, ii) nodes filled with more than M entries and iii) duplication of a node on R-Tree. 
+The RDebug algorithm was able to identify this inconsistencies on distributed R-Tree. 
+In future works, node replica consistencies between servers will be simulated to evaluate the RDebug algorithm.
