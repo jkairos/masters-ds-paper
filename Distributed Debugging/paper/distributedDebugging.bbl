@@ -22,6 +22,11 @@ C.~E.~Mcdowell, D. P.~H. (1989).
 \newblock {Debugging concurrent programs}.
 \newblock {\em ACM Computing Surveys}, 21:593--622.
 
+\bibitem[Cassandra ]{cassandra1apache}
+Cassandra, A.
+\newblock The apache software foundation.
+\newblock {\em URL: http://cassandra. apache. org/(visited on 24/08/2013)}.
+
 \bibitem[Comer 1979]{comer1979ubiquitous}
 Comer, D. (1979).
 \newblock {Ubiquitous B-tree}.
@@ -43,11 +48,12 @@ de~Oliveira, T., Sacramento, V., Oliveira, S., Albuquerque, P., Cardoso, M.,
 \newblock In {\em XXIX Simp{\'o}sio Brasileiro de Redes de Computadores e
   Sistemas Distribu{\'i}dos}.
 
-\bibitem[du~Mouza et~al. 2007]{du2007sd}
-du~Mouza, C., Litwin, W., and Rigaux, P. (2007).
-\newblock Sd-rtree: A scalable distributed rtree.
-\newblock In {\em Data Engineering, 2007. ICDE 2007. IEEE 23rd International
-  Conference on}, pages 296--305. IEEE.
+\bibitem[Demers et~al. 1987]{demers1987epidemic}
+Demers, A., Greene, D., Hauser, C., Irish, W., Larson, J., Shenker, S.,
+  Sturgis, H., Swinehart, D., and Terry, D. (1987).
+\newblock Epidemic algorithms for replicated database maintenance.
+\newblock In {\em Proceedings of the sixth annual ACM Symposium on Principles
+  of distributed computing}, pages 1--12. ACM.
 
 \bibitem[Elshoff 1989]{amoeba1989}
 Elshoff, I. J.~P. (1989).
@@ -85,11 +91,6 @@ Hood, R. (1996).
 \newblock In {\em In Symposium on Parallel and distributed tools}, pages
   127--136. ACM.
 
-\bibitem[Jacox and Samet 2007]{jacox2007spatial}
-Jacox, E. and Samet, H. (2007).
-\newblock Spatial join techniques.
-\newblock {\em ACM Transactions on Database Systems (TODS)}, 32(1):7.
-
 \bibitem[Kamel and Faloutsos 1994]{kamel1994hilbert}
 Kamel, I. and Faloutsos, C. (1994).
 \newblock {Hilbert R-tree: An Improved R-tree using Fractals}.
@@ -104,11 +105,6 @@ Kerr, N. (2009).
 Koudas, N., Faloutsos, C., and Kamel, I. (1996).
 \newblock Declustering spatial databases on a multi-computer architecture.
 \newblock {\em Advances in Database Technology-EDBT'96}, pages 592--614.
-
-\bibitem[Manolopoulos et~al. 2003]{manolopoulos2003rth}
-Manolopoulos, Y., Nanopoulos, A., Papadopoulos, A., and Theodoridis, Y. (2003).
-\newblock {R-trees have grown everywhere}.
-\newblock {\em Submitted to ACM Computing Surveys}.
 
 \bibitem[Schnitzer and Leutenegger 1999]{schnitzer1999master}
 Schnitzer, B. and Leutenegger, S. (1999).
@@ -125,12 +121,6 @@ Stanley, T., Close, T., and Miller, M. (2009).
 WH~Cheung, JP~Black, E.~M. (1990).
 \newblock {A Framework for Distributed Debugging}.
 \newblock {\em IEEE}, pages 106--115.
-
-\bibitem[Wismuller 1997]{debuggingMP1997}
-Wismuller, R. (1997).
-\newblock {Debugging message passing programs using invisible message tags}.
-\newblock In {\em In European PVM/MPI Users’ Group Meeting}, page 295–302.
-  Springer-Verlag.
 
 \bibitem[Xie et~al. 2008]{xie2008two}
 Xie, Z., Ye, Z., and Wu, L. (2008).

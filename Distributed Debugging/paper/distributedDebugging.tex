@@ -12,7 +12,7 @@
      
 \sloppy
 
-\title{Debugging Techniques for Distributed R-Trees}
+\title{RDebug: A New Debugging Technique for Distributed R-Trees}
 
 \author{Sávio S. T. de Oliveira\inst{1}, Jose F. de S. Filho\inst{1}, Vagner J. do Sacramento Rodrigues\inst{1}, \\Marcelo de C. Cardoso\inst{1}, Sérgio T. de Carvalho\inst{1}}
 
@@ -27,24 +27,26 @@
 \maketitle
 
 \begin{abstract}
- The growing availability of data and the number of users have motivated the emergence of distributed algorithms to process spatial operations efficiently. 
- Those distributed algorithms are based on distributed indexes for efficient processing. 
- Researches and ongoing work use R-Trees as distributed spatial index structure for indexing and retrieval of objects. 
- However, distributed indexes based on R-Trees have a challenge: How debugging a distributed index based on an R-Tree? 
- In the last years many researches have been published on distributed algorithms and distributed processing. 
- However none of them has addressed the debugging of a distributed R-Tree index. This paper presents a new algorithm for debugging a distributed R-Tree index, hereinafter RDebug. 
- This algorithm has been used on DistGeo, a spatial platform, and to visualize the algorithms' output a graphic tool was created.
+The high availability of data and the number of users have motivated the emergence of distributed algorithms to process spatial operations efficiently. 
+These algorithms are based on distributed indexes for an efficient processing. 
+Researches and ongoing work use R-trees as a dsitributed spatial structure for indexing and retrieval of objects. 
+However, these indexes have shown a challenge, that is, how to debug an index which is based on an R-Tree? 
+In the past few years researches have been published on both distributed algorithms and distributed processing. 
+Yet, none of them has aproached the debugging of the distributed R-Tree index. 
+This paper presents a new algorithm for debugging a distributed index based on R-Tree, hereinafter, RDebug. 
+This algorithm was used on DistGeo, a platform to process distributed spatial operations.
+A graphic tool,named RDebug Visualizer, was created to visualize the output of the RDebug algorithm. 
 \end{abstract}
 
 \input{introduction}
+
+\input{basicTechniques}
 
 \input{spatialProcessingDistributedAlgorithms}
 
 \input{techniqueForDebuggingDistributedRTree}
 
 \input{testes}
-
-\input{basicTechniques}
 
 \input{conclusion}
 

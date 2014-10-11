@@ -5,19 +5,19 @@ The RDebug algorithm have been evaluated on 3500 MHz Intel(R) Core(TM) i7-2600 C
 connected by 1 GBit/sec switched Ethernet running Ubuntu 14.04. Each node has 16 GB of main memory.
 The experiment results were achieved with 1, 2, 4 and 8 servers on DistGeo platform.
 
-The experiments were performed using three datasets with different characteristics.
+The experiments used three data sets with different characteristics.
 The first contains 1000000 points of business listings and points of interest (POIs) from SimpleGeo\footnote{https://github.com/simplegeo}.
 The second dataset comprises 226964 lines representing the rivers on Brazil from LAPIG\footnote{www.lapig.iesa.ufg.br}. 
 The third contains 220000 polygons of the census of USA from TIGER/Line\footnote{Census 2007 Tiger/Line data}.
 
-The RDebug was executed on DistGeo platform after the indexing of each dataset.
-The algorithm was able to collect information about the R-Tree index, such as dead space and overlapping area.
+The RDebug was executed on DistGeo platform after the insertion and indexing of each dataset.
+The algorithm was able to collect information from the R-Tree index, such as dead space and overlapping area.
 Furthermore, RDebug algorithm has succeeded to collect the index structure allowing visualize each data set R-Tree index on RDebug Visualizer tool.
 
 Three inconsistencies were deliberately inserted in the index to evaluate the RDebug: 
-i) inconsistencies between parent and child nodes bounding, ii) nodes filled with more than $M$ entries and iii) duplication of a node on R-Tree. 
-The RDebug algorithm was able to identify this inconsistencies in every distributed R-Tree related to datasets. 
-The replica consistency on DistGeo is supported by Apache Cassandra \cite{cassandra1apache} and no replica inconsistencies was found in any test. 
+i) bound inconsistencies between parent and child nodes, ii) nodes filled with more than $M$ entries and iii) duplication of a node on R-Tree. 
+The RDebug algorithm was able to identify this inconsistencies on distributed R-Tree. 
+In future works, node replica consistencies between servers will be simulated to evaluate the RDebug algorithm.
 
 \begin{figure}[h]
   \centering

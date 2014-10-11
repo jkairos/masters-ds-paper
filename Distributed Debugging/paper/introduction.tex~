@@ -16,7 +16,7 @@ However, distributed R-Trees indexes have shown a challenge: how to debug an ind
 Debugging is an essential step in the development process, albeit often neglected in the development of distributed applications 
 due to the fact that distributed systems complicate the already difficult task of debugging \cite{cheung1990Framework}.
 In recent years, researches have been developed some helpful debugging techniques for distributed environment. 
-Nevertheless, we have not found any technique to debug any distributed spatial index including the distributed R-Tree. 
+Nevertheless, we have not found any technique to debug any distributed spatial index, including the distributed R-Tree. 
 
 In this paper, we propose a new debugging algorithm for distributed R-Tree building. 
 The debug algorithm, called RDebug, uses the distributed index structure to aggregate debugging information. 

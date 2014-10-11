@@ -47,4 +47,4 @@ However, it is only indicated for non-indexed datasets.
 
 A number of techniques and platforms have been proposed for handling spatial big data.
 Nevertheless, none of the researches propose a technique for distributed spatial index debugging of an R-Tree.
-Besides, none of them propose a platform using a peer-to-peer approach for processing distributed spatial algorithms as found on DistGeo platform (Section \ref{sub:dist_geo}).
+Besides, none of them propose a platform using a peer-to-peer approach for processing distributed spatial algorithms as found on DistGeo platform \ref{sub:dist_geo}.
