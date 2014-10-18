@@ -1,8 +1,8 @@
 \section{Related work}
 \label{sec:related}
 
-Researches on distributed spatial data either show techniques to debug distributed applications in general or techniques for R-tree distributed processing.  
-Techniques for debugging a distributed R-Tree index was not found in literature.
+Researches on distributed spatial data either show techniques to debug distributed applications in general or techniques for R-tree distributed processing, 
+but none adressed both issues.
 The Section \ref{dist_debug} shows the distributed debugging researches and \ref{spatialdist} describes researches of platforms for processing distributed spatial algorithms.
 	
 \subsection{Distributed Debugging Techniques}
@@ -29,7 +29,7 @@ the paper focus is on defining a step-by-step approach to tackle distributed deb
 \subsection{Distributed Spatial Algorithms}
 \label{spatialdist}
 
-This Section describes briefly the researches that present the use of parallelism in order to improve the response time of the spatial algorithms. 
+This Section describes briefly the researches which present the use of parallelism in order to improve the response time of the spatial algorithms. 
 M-RTree \cite{koudas1996declustering} was the first published paper, 
 which shows a shared-nothing architecture, with a master and several workstations connected to a LAN network. 
 The master machine can be a bottleneck because it handles and client requests and moreover merges the answers of the slaves and send to client machines. 

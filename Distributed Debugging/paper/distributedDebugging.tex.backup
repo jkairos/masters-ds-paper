@@ -12,14 +12,21 @@
      
 \sloppy
 
-\title{Debugging Techniques for Distributed R-Trees}
+\title{RDebug: A New Debugging Technique for Distributed R-Trees}
 
-\author{Sávio Teles\inst{1}, Jose Ferreira Filho\inst{1}, Vagner Sacramento{1}, Marcelo de Castro{1}, Sérgio Carvalho{1}}
+\author{Sávio S. T. de Oliveira\inst{2}, Jose F. de S. Filho\inst{1}, Vagner J. do Sacramento Rodrigues\inst{2}, \\Marcelo de C. Cardoso\inst{2}, Sérgio T. de Carvalho\inst{1}}
 
-\address{Instituto de Informática -- Universidade Federal de Goiás (UFG) \\
+\address{Instituto de Informática -- Universidade Federal de Goiás
+  (UFG)\\
   Alameda Palmeiras, Quadra D, Câmpus Samambaia \\
   131 - CEP 74001-970 -- Goiânia -- GO -- Brazil
-\email{savioteles@gmail.com, jkairos@gmail.com}
+\nextinstitute
+  GoGeo\\
+  Rua Leopoldo Bulhões esquina com a 1014 \\
+  Quadra 31, Lote 07, Sala 9 Setor Pedro Ludovico \\
+  CEP 74820-270 -- Goiânia -- GO -- Brazil
+  \email{savio.teles@gogeo.io, jkairos@gmail.com, vagner@gogeo.io}
+  \email{marcelo.cardoso@gogeo.io, sergio@inf.ufg.br}
 }
 
 \begin{document} 
@@ -27,25 +34,23 @@
 \maketitle
 
 \begin{abstract}
- The growing availability of data and the number of users have motivated the emergence of distributed algorithms to process spatial operations efficiently. 
- Those distributed algorithms are based on distributed indexes for efficient processing. 
- Researches and ongoing work use R-Trees as distributed spatial index structure for indexing and retrieval of objects. 
- However, distributed indexes based on R-Trees have a challenge: How debugging a distributed index based on an R-Tree? 
- In the last years many researches have been published on distributed algorithms and distributed processing. 
- However, none of them has addressed the debugging of a distributed R-Tree index. 
- This paper presents a new algorithm for debugging a distributed R-Tree index, hereinafter RDebug. 
- This algorithm has been used on DistGeo, a spatial platform, and to visualize the algorithms' output a graphic tool was created.
+The high data availability and the increasing number of GIS users have motivated the emergence of distributed algorithms to process spatial operations efficiently. 
+These algorithms are based on distributed indexes for an high performance processing. Researches and ongoing work use R-trees as a distributed spatial structure for indexing and retrieval of geo objects. 
+However, these indexes have shown a challenge, that is, how to debug an index which is based on an R-Tree? 
+In the past few years researches have been published on both distributed algorithms and distributed processing.
+Though none of them has proposed a debugging technique to a distributed R-Tree index. This paper presents a new algorithm for debugging a distributed index based on R-Tree which is called RDebug. 
+This algorithm was used on DistGeo, a platform to process distributed spatial operations. A graphic tool, named RDebug Visualizer, was developed to show the output of the RDebug algorithm.
 \end{abstract}
 
 \input{introduction}
+
+\input{basicTechniques}
 
 \input{spatialProcessingDistributedAlgorithms}
 
 \input{techniqueForDebuggingDistributedRTree}
 
 \input{testes}
-
-\input{basicTechniques}
 
 \input{conclusion}
 

@@ -6,7 +6,7 @@ Due to the distributed processing nature on this platform an issue arises: debug
 
 We have seen researches on spatial data processing and distributed debugging, but none of them propose techniques for debugging spatial algorithms in a R-Tree. 
 Our work presents the RDebug algorithm for debugging the building of a distributed R-Tree index. 
-RDebug uses the R-Tree index itself to gather the debug informations. 
+RDebug uses the R-Tree index itself to gather the debug information. 
 The data gathering is achieved in a distributed way, improving the debugging algorithm efficiency.
 
 A new peer-to-peer platform (DistGeo) was proposed in our work to process distributed spatial algorithms.
@@ -14,8 +14,8 @@ RDebug has been implemented in DistGeo platform. The R-Tree nodes are distribute
 Thus, RDebug can be processed without bottlenecks and point of failures.
 
 A graphical tool(RDebug Visualizer) has been created to visualize the structure of the distributed R-Tree index and the debugging information about the index building. 
-Using this debugging informations, we can identify discrepancies in the index building and optimize the R-Tree index too.
-The RDebug algorithm can be used to collected debug informations in any index with spatial nodes organization similar to R-Tree (e.g. Hilbert R-Tree \cite{kamel1994hilbert}).
+Using this debugging information, we can identify discrepancies in the index building and optimize the R-Tree index too.
+The RDebug algorithm can be used to collected debug information in any index with spatial nodes organization similar to R-Tree (e.g. Hilbert R-Tree \cite{kamel1994hilbert}).
 
 Ongoing work includes modify the RDebug algorithm to debug the Window Query and Join Query searching algorithms. 
 The RDebug algorithm is easily adapted to gather debugging information for Window Query. 
