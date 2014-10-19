@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012/Debian) (format=pdflatex 2013.6.2)  19 OCT 2014 11:37
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012/Debian) (format=pdflatex 2013.6.2)  19 OCT 2014 11:44
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -229,19 +229,19 @@ LaTeX Font Info:    Redeclaring font encoding T1 on input line 43.
 (./distributedDebugging.aux)
 \openout1 = `distributedDebugging.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 32.
-LaTeX Font Info:    ... okay on input line 32.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 32.
-LaTeX Font Info:    ... okay on input line 32.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 32.
-LaTeX Font Info:    ... okay on input line 32.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 32.
-LaTeX Font Info:    ... okay on input line 32.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 32.
-LaTeX Font Info:    ... okay on input line 32.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 32.
-LaTeX Font Info:    ... okay on input line 32.
-LaTeX Font Info:    Try loading font information for T1+ptm on input line 32.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 29.
+LaTeX Font Info:    ... okay on input line 29.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 29.
+LaTeX Font Info:    ... okay on input line 29.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 29.
+LaTeX Font Info:    ... okay on input line 29.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 29.
+LaTeX Font Info:    ... okay on input line 29.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 29.
+LaTeX Font Info:    ... okay on input line 29.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 29.
+LaTeX Font Info:    ... okay on input line 29.
+LaTeX Font Info:    Try loading font information for T1+ptm on input line 29.
 
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/t1ptm.fd
 File: t1ptm.fd 2001/06/04 font definitions for T1/ptm.
@@ -339,26 +339,26 @@ e
 ))
 \c@lstlisting=\count114
 LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <16> not available
-(Font)              Font shape `T1/ptm/b/n' tried instead on input line 34.
+(Font)              Font shape `T1/ptm/b/n' tried instead on input line 31.
 LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <12> not available
-(Font)              Font shape `T1/ptm/b/n' tried instead on input line 34.
+(Font)              Font shape `T1/ptm/b/n' tried instead on input line 31.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <12> on input line 34.
+(Font)              <12> on input line 31.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <8> on input line 34.
+(Font)              <8> on input line 31.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <6> on input line 34.
+(Font)              <6> on input line 31.
 
-Overfull \hbox (3.30391pt too wide) in paragraph at lines 34--34
+Overfull \hbox (3.30391pt too wide) in paragraph at lines 31--31
  [][] 
  []
 
-LaTeX Font Info:    Try loading font information for T1+pcr on input line 34.
+LaTeX Font Info:    Try loading font information for T1+pcr on input line 31.
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/t1pcr.fd
 File: t1pcr.fd 2001/06/04 font definitions for T1/pcr.
 )
 LaTeX Font Info:    Font shape `T1/ptm/bx/it' in size <12> not available
-(Font)              Font shape `T1/ptm/b/it' tried instead on input line 36.
+(Font)              Font shape `T1/ptm/b/it' tried instead on input line 33.
  (./introduction.tex
 LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <13> not available
 (Font)              Font shape `T1/ptm/b/n' tried instead on input line 1.
@@ -453,11 +453,11 @@ Package pdftex.def Info: bound_inconsistency.png used on input line 33.
 ) (./distributedDebugging.bbl [11]) [12]
 (./distributedDebugging.aux) ) 
 Here is how much of TeX's memory you used:
- 5404 strings out of 495059
- 75264 string characters out of 3182031
- 163775 words of memory out of 3000000
- 8475 multiletter control sequences out of 15000+200000
- 44967 words of font info for 52 fonts, out of 3000000 for 9000
+ 5405 strings out of 495059
+ 75277 string characters out of 3182031
+ 163786 words of memory out of 3000000
+ 8476 multiletter control sequences out of 15000+200000
+ 45289 words of font info for 53 fonts, out of 3000000 for 9000
  14 hyphenation exceptions out of 8191
  38i,20n,32p,283b,526s stack positions out of 5000i,500n,10000p,200000b,50000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/ba
@@ -471,7 +471,7 @@ type1/urw/helvetic/uhvb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/ti
 mes/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb
 ></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/te
 xlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on distributedDebugging.pdf (12 pages, 539183 bytes).
+Output written on distributedDebugging.pdf (12 pages, 539181 bytes).
 PDF statistics:
  98 PDF objects out of 1000 (max. 8388607)
  63 compressed objects within 1 object stream
