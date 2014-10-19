@@ -1,18 +1,14 @@
 \section{Distributed Processing of Spatial Algorithms}
-\label{sec:spatial_dist}
-
-\subsection{Data Structures for Spatial Data Processing}
-\label{sub:spatialdata}		
+\label{sec:spatial_dist}		
 A number of structures have been proposed for handling multi-dimensional spatial data, such as: 
 KD-Tree \cite{bentley1975multidimensional}, Hilbert R-Tree \cite{kamel1994hilbert} and R-Tree \cite{guttman1984r}.
-The R-Tree has been widely used to index the datasets on GIS databases and is used to index the datasets in our work.
+The R-Tree has been widely used to index the datasets on GIS databases and it has been used as an index data structure in this work.
 
 A R-Tree is a height-balanced tree similar to a B-Tree \cite{comer1979ubiquitous} with index records in its leaf nodes containing pointers to data objects. 
 The key idea of the data structure is to group nearby objects and represent them with their minimum bounding rectangle (MBR) in the next higher level of the tree. 
 
 Figure \ref{fig:rtree} illustrates the hierarchical structure of a R-Tree with a root node, internal nodes ($N1...2 \subset N3...6$) and leaves ($N3...6 \subset a...h$). 
-Every internal node contains a set of rectangles and pointers to the corresponding child node and every leaf node contains the rectangles of spatial objects 
-(the pointer to some spatial object can be there). 
+Every internal node contains a set of rectangles and pointers to the corresponding child node and every leaf node contains the rectangles of spatial objects.
 
 The Figure \ref{fig:rtree-space} shows MBRs grouping spatial objects of $a...h$ in sets by their co-location. 
 The Figure \ref{fig:rtree-index} illustrates the R-Tree representation. Each node stores at most $M$ and at least $m \leq M/2$ entries \cite{guttman1984r}. 
@@ -36,7 +32,7 @@ Our work uses the formula for $M$ value calculation presented in \cite{dedsi}.
 
 The Window Query is one of major query algorithms in R-Tree.
 The search starts from the root node of the tree and the input is a search rectangle (Query box). 
-For each rectangle in a node, it has to be decided either it overlaps the search rectangle or not. If yes, the corresponding child node has to be searched also. 
+For each rectangle in a node, it has to be decided whether it overlaps the search rectangle or not. If so, the corresponding child node has to be searched too. 
 
 Searching is done recursively until all overlapping nodes have been traversed. 
 When a leaf node is reached, the contained bounding boxes (rectangles) are tested against the search rectangle 
@@ -107,6 +103,6 @@ If a message is sent to N, is selected one of the servers that store a replica o
 The query requests are always sent to one of the cluster's server that stores the root node of the R-tree. 
 
 Some optimizations proposed in \cite{beckmann1990r} to reduce the overlapping and the dead area were adapted and implemented on DistGeo. 
-Reducing the overlapping and dead area minimizes the number of messages exchange in network on search algorithms, because the query accesses less nodes during the tree traversal (see Sub-Section \ref{sub:spatialdata}). 
+Reducing the overlapping and dead area minimizes the number of messages exchange in network on search algorithms because the query accesses less nodes during the tree traversal (see Section \ref{sec:spatial_dist}). 
 This work implements a new distributed debug algorithm of the R-Tree index (RDebug) that helps to reduce the overlap and dead area.
 We cover the RDebug algorithm in more details in Section \ref{sec:rdebug}.

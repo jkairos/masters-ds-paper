@@ -3,7 +3,7 @@
 
 Guarantee that a distributed spatial index has being built accordingly is a non-trivial task. 
 In a distributed environment, it is hard to find bugs on implementations of insertion algorithms due the difficult to synchronize the insertion of a lot of items at a same time. 
-Even in cases where the implementation is correct, it is not easy to improve the insertion algorithm performance (for example reducing the overlapping) 
+Even in cases where the implementation is correct, it is not easy to improve the insertion algorithm's performance (for example reducing the overlapping) 
 due the intricacy to collect information about the spatial index.
 
 This section describes RDebug, a new technique for index debugging, which allows collect debugging information about the distributed spatial index once it has been created. 
@@ -27,9 +27,6 @@ Thus, RDebug can be processed on DistGeo platform without bottlenecks and point 
 Besides, the R-Tree replicated nodes in the cluster allow load-balancing in the distributed R-Tree index traversal. 
 During the traversal, at every node accessed the traversal might go to a node of the cluster with less workload, increasing the RDebug algorithm performance. 
 
-In the first step, called S1 [Search sub-trees] (lines 1 - 11), the Algorithm \ref{alg:rdebug} traverses every node of the R-Tree starting from the root node to the leaves.
-The first request is sent to any server, which stores a replica of the root node.
-
 \medskip
 \begin{center}
 \begin{minipage}{1\textwidth}
@@ -48,12 +45,12 @@ The first request is sent to any server, which stores a replica of the root node
 \eIf{$T$ is not leaf}{
   stores the number of children entries in each replica server of T\;
   \For{each entry $E$ in $T$} {
-       $server \leftarrow $ choose one server, randomly,  that stores one replica of $E$\;
+       $server \leftarrow $ choose one server, randomly,  that keep one replica of $E$\;
            send msg to $server$ to process the node's child of $E$ on step S1\;
    }
 }
 {
-  verify the consistency of $T$ in others replicas\;
+  verify the consistency of $T$ in other replicas\;
       Invoke step S2 [Aggregation]\;
 }
 
@@ -100,6 +97,9 @@ store $information$ on shared memory\;
 \end{minipage}
 \end{center}
 
+In the first step, called S1 [Search sub-trees] (lines 1 - 11), the Algorithm \ref{alg:rdebug} traverses every node of the R-Tree starting from the root node to the leaves.
+The first request is sent to any server, which stores a replica of the root node.
+
 If the node $T$ is not a leaf (lines 2 - 8), then the number of children entries is stored to control the number of expected answers associated to $T$ in the second step of the algorithm. 
 This information is stored in a shared memory accessed by all servers with a replica of $T$. Lines $4-7$, show that for each entry $E$ in $T$, 
 a message is sent (continuing step S1) to any server that holds a replica of the child node of $E$, carrying on the first step in the children nodes. 
@@ -111,8 +111,8 @@ The index itself is used to aggregate this information using the cluster computa
 The index reverse structure facilitates the collection of the debugging information, 
 as one node of the R-Tree is responsible to aggregate only the information of its children. 
 
-The debug information about each node of R-Tree are stored in a shared memory that can be accessed by any server that store a replica of $T$.
-The RDebug update the information about the node $T$ that are being analyzed between the lines $13-18$.
+The debug information about each node of R-Tree in stored in a shared memory that can be accessed by any server that store a replica of $T$.
+The RDebug update the information about the node $T$ that is being analyzed between the lines $13-18$.
 
 In the line 13, the information is retrieved from the shared memory. 
 Line 14 verifies the consistency of $T$ in the servers that store any replica of $T$. Line 15 verifies the consistency of $M$ and $m$ values. 
@@ -131,12 +131,12 @@ Line 28 adds the data processed from lines 26 and 27 in $information$. Line 29 a
 This value is stored in the variable $count$, which is decremented and updated on shared memory.
 	
 If every node has sent the answer, the variable count then will hold the value 0 and lines 30-35 are processed. 
-If $T$ is the root node, then the information are sent to the client application, otherwise, those information are sent to the parent node of $T$. 
-If the variable $count$ is greater than 0, then the client information are stored in the shared memory to be used until until each reply is received by child nodes.
+If $T$ is the root node, then the information is sent to the client application, otherwise, all information collected is sent to the parent node of $T$. 
+If the variable $count$ is greater than 0, then the client information is stored in the shared memory to be used until until each reply is received by child nodes.
 	
 The algorithm \ref{alg:rdebug} was implemented in the DistGeo platform to collect the debugging information of the built distributed R-tree. 
-Those information are used in the platform to find out indexing issues and for optimize the searching performance on R-tree.
-With the aid of RDebug \ref{alg:rdebug} algorithm, it is possible debug the searching algorithms in a single R-Tree. 
+This information is used in the platform to find out indexing issues and for speed up the searching on an R-Tree.
+Using RDebug algorithm it is possible debug the searching algorithms in a single R-Tree. 
 For example, the Window Query algorithm shown on Section \ref{sec:spatial_dist}. 
 Whereas, algorithms that access many R-Trees, such as Spatial Join, need a deep change, as the algorithms can go through different paths.
 
