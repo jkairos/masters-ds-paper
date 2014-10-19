@@ -38,8 +38,8 @@ Searching is done recursively until all overlapping nodes have been traversed.
 When a leaf node is reached, the contained bounding boxes (rectangles) are tested against the search rectangle 
 and the objects that intersects with the search rectangle are returned.
 
-In Figure \ref{fig:rtree}, the search starts on root node, where the window intersects with nodes $N1$ and $N2$. Then, the algorithm analyzes node $N1$, 
-which only $N4$ intersects with the window. Analyzing node $N4$, the algorithm returns the spatial object namely $'b'$, that is the single object that intersects the window.
+In Figure \ref{fig:rtree}, the search starts on root node, where the window intersects with nodes $N1$ and $N2$. Then, the algorithm analyses node $N1$, 
+which only $N4$ intersects with the window. Analysing node $N4$, the algorithm returns the spatial object namely $'b'$, that is the single object that intersects the window.
 
 In node $N2$, we do not have any entry intersecting with the window due to the dead space. 
 In other words, the window intersects with a space, which does not contain any data.
@@ -102,7 +102,7 @@ Each R-Tree node N receives a key, which is used to store the node in a server S
 If a message is sent to N, is selected one of the servers that store a replica of N.
 The query requests are always sent to one of the cluster's server that stores the root node of the R-tree. 
 
-Some optimizations proposed in \cite{beckmann1990r} to reduce the overlapping and the dead area were adapted and implemented on DistGeo. 
-Reducing the overlapping and dead area minimizes the number of messages exchange in network on search algorithms because the query accesses less nodes during the tree traversal (see Section \ref{sec:spatial_dist}). 
-This work implements a new distributed debug algorithm of the R-Tree index (RDebug) that helps to reduce the overlap and dead area.
-We cover the RDebug algorithm in more details in Section \ref{sec:rdebug}.
+As discussed on Section \ref{sec:spatial_dist}, reducing the overlapping and dead area on R-Tree minimizes the number of R-Tree nodes accessed during the tree traversal on search algorithms.
+The growth of the number of nodes accessed increase the network traffic because the R-Tree nodes are stored in several servers on cluster, as shown in Figure \ref{fig:partitioning}.
+This work implements a new algorithm that collects debugging information about a distribute R-Tree and can helps to reduce the overlapping and dead area.
+We cover this algorithm in more details in Section \ref{sec:rdebug}.

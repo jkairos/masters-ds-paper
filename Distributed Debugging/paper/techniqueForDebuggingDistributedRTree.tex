@@ -2,7 +2,7 @@
 \label{sec:rdebug}
 
 Guarantee that a distributed spatial index has being built accordingly is a non-trivial task. 
-In a distributed environment, it is hard to find bugs on implementations of insertion algorithms due the difficult to synchronize the insertion of a lot of items at a same time. 
+In a distributed environment, it is hard to find bugs on insertion algorithms due the difficult to synchronize the insertion, since it must be done concurrently.
 Even in cases where the implementation is correct, it is not easy to improve the insertion algorithm's performance (for example reducing the overlapping) 
 due the intricacy to collect information about the spatial index.
 
